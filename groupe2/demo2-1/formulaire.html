@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Démo des formulaires HTML</title>
+  </head>
+  <body>
+    <h1>Démo des champs de formulaire HTML</h1>
+
+    <form action="#" method="get">
+      <!-- Champs de base -->
+      <p>
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required />
+      </p>
+      <p>
+        <label for="mdp">Mot de passe :</label>
+        <input type="password" id="mdp" name="mdp" />
+      </p>
+      <p>
+        <label
+          ><input type="checkbox" name="abonne" /> S'abonner à
+          l'infolettre</label
+        >
+      </p>
+      <p>
+        Sexe :
+        <label><input type="radio" name="sexe" value="H" /> Homme</label>
+        <label><input type="radio" name="sexe" value="F" /> Femme</label>
+      </p>
+      <input type="hidden" name="id_cache" value="12345" />
+
+      <!-- Types HTML5 -->
+      <p>
+        <label for="courriel">Courriel :</label>
+        <input type="email" id="courriel" name="courriel" />
+      </p>
+      <p>
+        <label for="site">Site Web :</label>
+        <input type="url" id="site" name="site" />
+      </p>
+      <p>
+        <label for="age">Âge :</label>
+        <input type="number" id="age" name="age" min="0" max="120" />
+      </p>
+      <p>
+        <label for="naissance">Date de naissance :</label>
+        <input type="date" id="naissance" name="naissance" />
+      </p>
+      <p>
+        <label for="heure">Heure :</label>
+        <input type="time" id="heure" name="heure" />
+      </p>
+      <p>
+        <label for="satisfaction">Niveau de satisfaction :</label>
+        <input
+          type="range"
+          id="satisfaction"
+          name="satisfaction"
+          min="0"
+          max="10"
+        />
+      </p>
+      <p>
+        <label for="couleur">Choisissez une couleur :</label>
+        <input type="color" id="couleur" name="couleur" />
+      </p>
+      <p>
+        <label for="fichier">Téléverser un fichier :</label>
+        <input type="file" id="fichier" name="fichier" />
+      </p>
+
+      <!-- Autres éléments -->
+      <p>
+        <label for="commentaires">Commentaires :</label><br />
+        <textarea
+          id="commentaires"
+          name="commentaires"
+          rows="4"
+          cols="40"
+        ></textarea>
+      </p>
+      <p>
+        <label for="pays">Pays :</label>
+        <select id="pays" name="pays">
+          <option value="">-- Sélectionnez --</option>
+          <option value="ca">Canada</option>
+          <option value="fr" selected>France</option>
+          <option value="us">États-Unis</option>
+        </select>
+      </p>
+      <p>
+        <button type="button" onclick="alert('Bouton personnalisé cliqué!')">
+          Cliquez-moi
+        </button>
+      </p>
+
+      <!-- Boutons d'action -->
+      <p>
+        <button type="submit" value="Envoyer">Envoyer</button>
+        <button type="reset" value="Réinitialiser">Reinitialiser</button>
+      </p>
+    </form>
+  </body>
+</html>
