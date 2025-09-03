@@ -8,7 +8,7 @@
   <body>
     <h1>Démo des champs de formulaire HTML</h1>
 
-    <form action="#" method="get">
+    <form action="#" method="post">
       <!-- Champs de base -->
       <p>
         <label for="nom">Nom :</label>
@@ -19,10 +19,8 @@
         <input type="password" id="mdp" name="mdp" />
       </p>
       <p>
-        <label
-          ><input type="checkbox" name="abonne" /> S'abonner à
-          l'infolettre</label
-        >
+        <label for="abonne"> S'abonner à l'infolettre</label>
+        <input type="checkbox" name="abonne" id="abonne" />
       </p>
       <p>
         Sexe :
