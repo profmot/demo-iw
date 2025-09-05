@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exemple Header Sticky</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Petit header (toujours en haut, normal) */
+      .top-bar {
+        background: #333;
+        color: white;
+        padding: 8px 20px;
+        font-size: 14px;
+      }
+
+      .top-bar a {
+        color: #ddd;
+        margin-right: 15px;
+        text-decoration: none;
+      }
+
+      .top-bar a:hover {
+        color: white;
+      }
+
+      /* Gros header sticky */
+      .main-header {
+        background: #007acc;
+        color: white;
+        padding: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        position: sticky;
+        top: 0;
+        z-index: 10; /* passe par-dessus le reste */
+      }
+
+      .main-header nav {
+        margin-top: 10px;
+      }
+
+      .main-header a {
+        color: white;
+        text-decoration: none;
+        margin-right: 20px;
+        font-size: 18px;
+      }
+
+      .main-header a:hover {
+        text-decoration: underline;
+      }
+
+      /* Contenu de test */
+      .content {
+        padding: 20px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Petit header -->
+    <div class="top-bar">
+      <a href="#">Contact</a>
+      <a href="#">Aide</a>
+      <a href="#">Connexion</a>
+    </div>
+
+    <!-- Gros header sticky -->
+    <header class="main-header">
+      Site avec Header Sticky
+      <nav>
+        <a href="#">Accueil</a>
+        <a href="#">Produits</a>
+        <a href="#">Services</a>
+        <a href="#">À propos</a>
+      </nav>
+    </header>
+
+    <!-- Contenu long -->
+    <div class="content">
+      <h1>Bienvenue</h1>
+      <p>
+        Voici un exemple de page avec deux entêtes : un petit menu en haut et un
+        gros header sticky. Lorsque vous faites défiler la page, le gros header
+        reste visible et recouvre le contenu suivant.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed
+        luctus lacus. Duis non purus sed metus aliquet fermentum.
+      </p>
+      <p>
+        Curabitur sit amet velit ac odio pretium porta. Cras in pulvinar velit.
+        Proin maximus dolor ut nulla feugiat, nec blandit erat sollicitudin.
+      </p>
+      <p>
+        Integer dignissim orci quis massa vestibulum, ut fermentum elit laoreet.
+        Donec vitae urna euismod, efficitur justo ac, pharetra orci. Sed at arcu
+        nisi. Donec sit amet sodales eros, a luctus nunc.
+      </p>
+      <p>
+        Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Donec interdum sem ac odio iaculis feugiat.
+      </p>
+
+      <!-- on répète du texte pour forcer le scroll -->
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed
+        luctus lacus. Duis non purus sed metus aliquet fermentum.
+      </p>
+      <p>
+        Curabitur sit amet velit ac odio pretium porta. Cras in pulvinar velit.
+        Proin maximus dolor ut nulla feugiat, nec blandit erat sollicitudin.
+      </p>
+      <p>
+        Integer dignissim orci quis massa vestibulum, ut fermentum elit laoreet.
+        Donec vitae urna euismod, efficitur justo ac, pharetra orci. Sed at arcu
+        nisi. Donec sit amet sodales eros, a luctus nunc.
+      </p>
+      <p>
+        Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Donec interdum sem ac odio iaculis feugiat.
+      </p>
+    </div>
+  </body>
+</html>

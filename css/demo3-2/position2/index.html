@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Démo des positions CSS</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        gap: 20px;
+        margin: 20px;
+      }
+
+      /* Zone de contrôle */
+      .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 230px;
+      }
+
+      .controls button {
+        padding: 8px;
+        border: 1px solid #ccc;
+        background: #f5f5f5;
+        cursor: pointer;
+        text-align: left;
+        font-family: monospace;
+      }
+
+      .controls button.active {
+        border: 2px solid #007acc;
+        background: #e0f0ff;
+      }
+
+      /* Zone de démo */
+      .demo {
+        border: 1px solid #ddd;
+        padding: 20px;
+        width: 300px;
+        height: 300px;
+        overflow: auto;
+        position: relative; /* nécessaire pour comparer absolute */
+      }
+
+      .box {
+        width: 80px;
+        height: 80px;
+        border: 2px solid blue;
+        background: rgba(0, 0, 255, 0.2);
+        margin-bottom: 20px;
+      }
+
+      .yellow {
+        background: yellow;
+        border: 2px solid red;
+      }
+      .espace-vide {
+        height: 1000px; /* Pour permettre le défilement de la page */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Panneau de contrôle -->
+    <div class="controls">
+      <button data-pos="static">position: static;</button>
+      <button data-pos="relative">
+        position: relative; top:40px; left:40px;
+      </button>
+      <button data-pos="absolute">
+        position: absolute; top:40px; left:40px;
+      </button>
+      <button data-pos="sticky">position: sticky; top:20px;</button>
+      <button data-pos="fixed">position: fixed; top:10px; right:10px;</button>
+    </div>
+
+    <!-- Zone de démonstration -->
+    <div class="demo" id="demo">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box yellow" id="yellowBox"></div>
+      <p>
+        Faites défiler ce conteneur pour voir l’effet de
+        <code>position: sticky</code>. Essayez aussi
+        <code>position: fixed</code> : la boîte jaune restera figée par rapport
+        à la fenêtre du navigateur, et non à la zone de démo.
+      </p>
+      <p style="height: 400px">
+        Texte additionnel pour permettre le défilement...
+      </p>
+    </div>
+    <div class="espace-vide"></div>
+
+    <script>
+      const buttons = document.querySelectorAll('.controls button');
+      const yellowBox = document.getElementById('yellowBox');
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          // Reset styles
+          yellowBox.style.position = 'static';
+          yellowBox.style.top = '';
+          yellowBox.style.left = '';
+          yellowBox.style.right = '';
+
+          // Enlever la sélection active
+          buttons.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // Appliquer la position choisie
+          const pos = btn.dataset.pos;
+          if (pos === 'relative') {
+            yellowBox.style.position = 'relative';
+            yellowBox.style.top = '40px';
+            yellowBox.style.left = '40px';
+          } else if (pos === 'absolute') {
+            yellowBox.style.position = 'absolute';
+            yellowBox.style.top = '40px';
+            yellowBox.style.left = '40px';
+          } else if (pos === 'sticky') {
+            yellowBox.style.position = 'sticky';
+            yellowBox.style.top = '20px';
+          } else if (pos === 'fixed') {
+            yellowBox.style.position = 'fixed';
+            yellowBox.style.top = '10px';
+            yellowBox.style.right = '10px';
+          } else {
+            yellowBox.style.position = 'static';
+          }
+        });
+      });
+
+      // Par défaut, afficher "static"
+      buttons[0].click();
+    </script>
+  </body>
+</html>
