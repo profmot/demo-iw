@@ -1,0 +1,42 @@
+/* Styles de base */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Bloc avec bordure stylisée et coins arrondis */
+.styled-box {
+  background-color: #f0f8ff;
+  padding: 20px;
+  width: 250px;
+  margin: 20px auto;
+  border-radius: 20px; /* Arrondit les coins */
+  border-style: solid; /* Style de bordure solide */
+  border-width: 3px; /* Largeur de la bordure */
+  border-color: #0073e6; /* Couleur de la bordure */
+}
+
+/* Bouton avec bordure stylisée et coins arrondis */
+.styled-button {
+  background-color: #0073e6;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px; /* Coins arrondis */
+  border-style: dashed; /* Bordure en pointillés */
+  border-width: 2px; /* Largeur de la bordure */
+  border-color: #005bb5; /* Couleur de la bordure */
+  cursor: pointer;
+}
+
+/* Image avec bordure stylisée et forme circulaire */
+.styled-image {
+  display: block;
+  margin: auto;
+  width: 50px;
+  border-radius: 50%; /* Transforme l'image en cercle */
+  border-style: double; /* Style de bordure double */
+  border-width: 5px; /* Largeur de la bordure */
+  border-color: #28a745; /* Couleur de la bordure */
+  margin-top: 20px;
+}

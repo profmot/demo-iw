@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemple : Éléments de Type Bloc et En Ligne</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Caractéristiques des Éléments de Type Bloc et En Ligne</h1>
+
+    <section>
+      <h2>Éléments de Type Bloc</h2>
+      <div class="bloc">
+        <p>
+          Chaque élément de type bloc commence sur une nouvelle ligne et occupe
+          toute la largeur de son conteneur parent.
+        </p>
+        <p>
+          Exemples d'éléments blocs : <strong>&lt;div&gt;</strong>,
+          <strong>&lt;p&gt;</strong>, <strong>&lt;h1&gt;</strong> à
+          <strong>&lt;h6&gt;</strong>, <strong>&lt;ul&gt;</strong>,
+          <strong>&lt;table&gt;</strong>.
+        </p>
+        <ul>
+          <li>
+            Utilisation : Structurer les sections de contenu sur une page.
+          </li>
+          <li>
+            Propriétés appliquées : <strong>width</strong>,
+            <strong>height</strong>, <strong>margin</strong>,
+            <strong>padding</strong>.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Éléments de Type En Ligne</h2>
+      <p>
+        Les éléments en ligne restent dans le flux du texte et n'occupent que la
+        largeur de leur contenu. Ils se placent côte à côte sans retour à la
+        ligne. Exemples d'éléments en ligne :
+        <span class="inline-example">&lt;span&gt;</span>,
+        <a href="#" class="inline-example">un lien (&lt;a&gt;)</a>,
+        <strong class="inline-example">texte en gras (&lt;strong&gt;)</strong>.
+      </p>
+      <p>
+        Les éléments en ligne sont parfaits pour styliser du texte ou des
+        petites images
+        <img
+          src="https://via.placeholder.com/20"
+          alt="Image exemple"
+          class="inline-example"
+        />
+        sans perturber la structure.
+      </p>
+    </section>
+  </body>
+</html>

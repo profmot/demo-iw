@@ -1,0 +1,52 @@
+/* Styles de base */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  color: #333;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #0073e6;
+  margin-bottom: 20px;
+}
+
+/* Structure du modèle de bloc */
+.bloc-structure {
+  width: 200px;
+  padding: 20px; /* Marge intérieure */
+  border: 5px solid #0073e6; /* Bordure */
+  margin: 20px auto; /* Marge extérieure, centrée */
+  background-color: #e6f2ff;
+}
+
+/* Calcul de la taille d'un élément bloc */
+.bloc-calcul {
+  width: 200px; /* Largeur du contenu */
+  padding: 20px; /* Marge intérieure */
+  border: 10px solid #0073e6; /* Bordure */
+  margin: 30px auto; /* Marge extérieure, centrée */
+  background-color: #e6f2ff;
+}
+
+/* box-sizing: content-box */
+.box-content-box {
+  width: 200px;
+  padding: 20px;
+  border: 10px solid #ff5733;
+  margin: 20px auto;
+  box-sizing: content-box; /* Par défaut */
+  background-color: #ffcccb;
+}
+
+/* box-sizing: border-box */
+.box-border-box {
+  width: 200px;
+  padding: 20px;
+  border: 10px solid #28a745;
+  margin: 20px auto;
+  box-sizing: border-box; /* Change la façon de calculer la largeur */
+  background-color: #c3e6cb;
+}

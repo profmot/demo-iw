@@ -1,0 +1,40 @@
+/* Styles de base */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styles pour les éléments de type bloc */
+.bloc {
+  border: 1px solid #0073e6; /* Bordure pour distinguer la section */
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #e6f2ff;
+}
+
+h2 {
+  color: #0073e6;
+}
+
+/* Styles pour les éléments de type en ligne */
+.inline-example {
+  background-color: #ffeb3b;
+  padding: 2px 5px;
+  margin: 0 2px;
+  border-radius: 3px;
+  color: #333;
+  text-decoration: none;
+  width: 50px;
+  height: 100px;
+}
+
+.inline-example img {
+  vertical-align: middle;
+}

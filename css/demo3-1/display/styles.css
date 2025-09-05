@@ -1,0 +1,75 @@
+/* Styles de base */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  color: #333;
+}
+
+/* Titre principal */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0073e6;
+}
+
+/* Display: inline */
+.inline {
+  display: inline;
+  background-color: #ffeb3b;
+  padding: 5px;
+}
+
+/* Display: block */
+.block {
+  display: block;
+  background-color: #e6f2ff;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Display: none */
+.none {
+  display: none; /* L'élément n'est pas affiché */
+}
+
+/* Display: inline-block */
+.inline-block {
+  display: inline-block;
+  background-color: #d1ffd1;
+  padding: 10px;
+  width: 150px; /* Peut être redimensionné */
+  height: 75px;
+  margin-top: 10px;
+}
+
+/* Styles de description */
+.description {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.inline-example {
+  display: inline;
+  background-color: #ffeb3b;
+  padding: 2px 5px;
+}
+
+.block-example {
+  display: block;
+  background-color: #e6f2ff;
+  padding: 5px;
+}
+
+.none-example {
+  display: none; /* Ne sera pas visible dans la description */
+}
+
+.inline-block-example {
+  display: inline-block;
+  background-color: #d1ffd1;
+  padding: 5px;
+  width: 100px;
+}
