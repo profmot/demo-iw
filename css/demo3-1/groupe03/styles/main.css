@@ -1,0 +1,49 @@
+* {
+  background-color: var(--bg-color);
+
+  color: var(--txt-color);
+}
+
+#parag-1.important {
+  font-size: 26px;
+  background-color: violet;
+}
+p.important.gras {
+  font-size: 36px;
+  background-color: red;
+}
+
+/*
+p {
+  color: var(--couleur-primaire);
+}
+
+#premier-paragraphe {
+  color: blueviolet;
+}
+
+.important {
+  color: chartreuse;
+}
+
+.gras {
+  font-weight: 900;
+}
+
+main > .mauve {
+  color: purple;
+}
+
+p::before {
+  content: '🌺';
+}
+
+input[type='email'] {
+  border-color: var(--couleur-primaire);
+  background-color: pink;
+}
+
+div:hover {
+  background-color: var(--couleur-secondaire);
+}
+*/

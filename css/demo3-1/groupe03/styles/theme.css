@@ -1,0 +1,13 @@
+:root {
+  --couleur-primaire: #556699;
+  --couleur-secondaire: #005566;
+  --bg-color: white;
+  --txt-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: black;
+    --txt-color: white;
+  }
+}
