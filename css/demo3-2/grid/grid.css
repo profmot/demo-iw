@@ -1,0 +1,79 @@
+:root {
+  --c-header: #7c3aed;
+  --c-nav: #c4b5fd;
+  --c-main: #ecfeff;
+  --c-aside: #fde68a;
+  --c-footer: #4c1d95;
+  --gap: 16px;
+  --pad: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, Arial, Helvetica, sans-serif;
+}
+
+/* Grille de page: 2D avec zones nommées */
+body {
+  display: grid;
+  min-height: 100dvh;
+  gap: var(--gap);
+  padding: var(--gap);
+  grid-template-columns: 240px 1fr; /* aside + contenu */
+  grid-template-rows: auto auto 1fr auto; /* header, nav, main, footer */
+  grid-template-areas:
+    'header header'
+    'nav    nav'
+    'aside  main'
+    'footer footer';
+}
+
+/* Zones colorées */
+.box {
+  padding: var(--pad);
+  border-radius: 10px;
+}
+.header {
+  grid-area: header;
+  background: var(--c-header);
+  color: white;
+}
+.nav {
+  grid-area: nav;
+  background: var(--c-nav);
+}
+.aside {
+  grid-area: aside;
+  background: var(--c-aside);
+}
+.main {
+  grid-area: main;
+  background: var(--c-main);
+}
+.footer {
+  grid-area: footer;
+  background: var(--c-footer);
+  color: white;
+  text-align: center;
+}
+
+/* Responsive: en mobile, on remanie la grille en 1 colonne */
+@media (max-width: 800px) {
+  body {
+    grid-template-columns: 1fr; /* 1 seule colonne */
+    grid-template-rows: auto auto auto 1fr auto;
+    grid-template-areas:
+      'header'
+      'nav'
+      'main'
+      'aside'
+      'footer';
+  }
+}

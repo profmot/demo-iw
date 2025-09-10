@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Layout Flexbox – Démo Pleine Hauteur</title>
+    <link rel="stylesheet" href="flex.css" />
+  </head>
+  <body>
+    <header class="site-header">En-tête (header)</header>
+
+    <nav class="site-nav">
+      <a href="#">Accueil</a>
+      <a href="#">Produits</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="content">
+      <main class="site-main">
+        <h1>Contenu principal</h1>
+        <ul>
+          <li>
+            On a surtout besoin d'aligner le nav en rangée et le corps (main +
+            aside) sur un seul axe.
+          </li>
+          <li>
+            Le passage en colonne en mobile se fait avec un simple
+            flex-direction: column;.
+          </li>
+        </ul>
+      </main>
+
+      <aside class="site-aside">
+        <h2>Aside</h2>
+        <p>Liens, promos, etc.</p>
+      </aside>
+    </div>
+
+    <footer class="site-footer">Pied de page (footer)</footer>
+  </body>
+</html>

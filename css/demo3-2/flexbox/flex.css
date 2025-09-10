@@ -1,0 +1,86 @@
+:root {
+  --c-header: #7c3aed;
+  --c-nav: #c4b5fd;
+  --c-main: #ecfeff;
+  --c-aside: #fde68a;
+  --c-footer: #4c1d95;
+  --pad: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+} /*  occupe toute la hauteur */
+body {
+  margin: 0;
+  font-family: system-ui, Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column; /*  empile header/nav/content/footer */
+  gap: 16px;
+}
+
+/* Zones */
+.site-header {
+  background: var(--c-header);
+  color: white;
+  padding: var(--pad);
+  text-align: center;
+}
+.site-nav {
+  background: var(--c-nav);
+  color: white;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 8px;
+}
+.site-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.15);
+}
+.site-nav a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Contenu principal qui prend tout l’espace restant */
+.content {
+  flex: 1; /*  étire le bloc pour remplir l’écran */
+  display: flex; /*  2 colonnes à l’intérieur */
+  gap: 16px;
+  padding: 16px;
+}
+.site-main {
+  flex: 1;
+  background: var(--c-main);
+  padding: var(--pad);
+  border-radius: 10px;
+}
+.site-aside {
+  width: 280px;
+  background: var(--c-aside);
+  padding: var(--pad);
+  border-radius: 10px;
+}
+
+.site-footer {
+  background: var(--c-footer);
+  color: white;
+  padding: var(--pad);
+  text-align: center;
+}
+
+/* Responsive: en mobile, on "empile" les colonnes */
+@media (max-width: 800px) {
+  .content {
+    flex-direction: column;
+  }
+  .site-aside {
+    width: auto;
+  }
+}
