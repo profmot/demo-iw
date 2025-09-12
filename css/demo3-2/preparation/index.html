@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo lexbox</title>
+    <style>
+      .container {
+        background-color: coral;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: stretch;
+        align-items: stretch;
+        justify-content: space-around;
+        height: 200px;
+      }
+      .item:hover {
+        transform: translateY(-2px);
+        transition: transform 0.1s ease-in-out;
+      }
+      .item {
+        background-color: lightblue;
+        border: 1px solid black;
+        text-align: center;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+    </div>
+  </body>
+</html>

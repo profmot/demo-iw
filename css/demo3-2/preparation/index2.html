@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo lexbox</title>
+    <style>
+      html,
+      body {
+        height: 100%; /* le body prend toute la fenêtre */
+        margin: 0; /* retire la marge par défaut du body */
+      }
+
+      .page {
+        min-height: 100vh; /* la grille occupe toute la hauteur visible */
+      }
+      .page {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: 200px 1fr 200px;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+          'entete entete entete'
+          'aside  contenu nav'
+          'pied   pied    pied';
+      }
+      .entete {
+        grid-area: entete;
+        background: #eee;
+        padding: 12px;
+      }
+      .nav {
+        grid-area: nav;
+        background: #d7f0d7;
+        padding: 12px;
+      }
+      .contenu {
+        grid-area: contenu;
+        background: #fff;
+        padding: 12px;
+        border: 1px solid #ccc;
+      }
+      .aside {
+        grid-area: aside;
+        background: #cfe8ff;
+        padding: 12px;
+      }
+      .pied {
+        grid-area: pied;
+        background: #eee;
+        padding: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="entete">Entête</header>
+      <nav class="nav">Menu</nav>
+      <main class="contenu">Contenu</main>
+      <aside class="aside">Aside</aside>
+      <footer class="pied">Pied</footer>
+    </div>
+  </body>
+</html>

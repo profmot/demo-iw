@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .grid {
+        height: 100vh;
+        border: 1px solid brown;
+        display: grid;
+        /*grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));*/
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: 100px 1fr 100px;
+
+        gap: 16px;
+        grid-template-areas:
+          'entete entete entete'
+          'cote1 main cote2'
+          'pied pied pied';
+      }
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-areas:
+            'entete'
+            'main'
+            'cote1'
+            'cote2'
+            'pied';
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .header {
+        grid-area: entete;
+        background-color: cornflowerblue;
+        border: 1px solid coral;
+        text-align: center;
+      }
+
+      .side1 {
+        grid-area: cote1;
+        background-color: cornflowerblue;
+        border: 1px solid coral;
+        text-align: center;
+      }
+      .side1:hover {
+        transform: scale(1.5);
+      }
+      .side2 {
+        grid-area: cote2;
+        background-color: cornflowerblue;
+        border: 1px solid coral;
+        text-align: center;
+      }
+      .principal {
+        grid-area: main;
+        background-color: cornflowerblue;
+        border: 1px solid coral;
+        text-align: center;
+      }
+      .footer {
+        grid-area: pied;
+        background-color: cornflowerblue;
+        border: 1px solid coral;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="header">1</div>
+      <div class="side1">2</div>
+      <div class="principal">3</div>
+      <div class="side2">4</div>
+      <div class="footer">5</div>
+    </div>
+  </body>
+</html>

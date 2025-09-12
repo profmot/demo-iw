@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        flex: 1 1 200px;
+        background-color: aquamarine;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        height: 300px;
+        align-items: stretch;
+        flex-wrap: wrap;
+      }
+      header,
+      footer {
+        height: 100px;
+        background-color: blueviolet;
+      }
+      .item {
+        flex: 1;
+        background-color: coral;
+        border: 1px solid turquoise;
+      }
+      .item.plus {
+        flex: 4 1 200px;
+      }
+      .cote {
+        width: 200px;
+        background-color: yellow;
+      }
+      .colonne {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="colonne">
+      <header>tete</header>
+      <div class="container">
+        <div class="cote">1<br />1</div>
+        <div class="item">2</div>
+        <div class="cote">3</div>
+      </div>
+      <footer>f</footer>
+    </div>
+  </body>
+</html>
