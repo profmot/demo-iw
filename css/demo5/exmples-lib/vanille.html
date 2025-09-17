@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Café Boréal — Landing</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --fg: #e2e8f0;
+        --accent: #38bdf8;
+        --muted: #94a3b8;
+        --card: #111827;
+        --radius: 14px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu;
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.5;
+      }
+      .container {
+        max-width: 1100px;
+        margin-inline: auto;
+        padding: 24px;
+      }
+      header {
+        padding: 32px 0;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+      nav a {
+        color: var(--fg);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .cta {
+        display: inline-block;
+        background: var(--accent);
+        color: #03111a;
+        padding: 12px 18px;
+        border-radius: 10px;
+        font-weight: 700;
+      }
+      .hero {
+        display: grid;
+        gap: 20px;
+        align-items: center;
+        padding: 24px 0;
+      }
+      .hero h1 {
+        font-size: clamp(28px, 5vw, 48px);
+        margin: 0;
+      }
+      .hero p {
+        color: var(--muted);
+        margin: 0;
+      }
+      .hero img {
+        width: 100%;
+        border-radius: var(--radius);
+        object-fit: cover;
+        aspect-ratio: 16/9;
+      }
+      .features {
+        display: grid;
+        gap: 18px;
+        margin: 28px 0;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid #1f2937;
+        padding: 18px;
+        border-radius: var(--radius);
+      }
+      .card h3 {
+        margin: 0 0 6px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      footer {
+        border-top: 1px solid #1f2937;
+        padding: 18px 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* Responsive */
+      @media (min-width: 768px) {
+        .hero {
+          grid-template-columns: 1.1fr 1fr;
+        }
+        .features {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container" role="banner">
+      <nav aria-label="Navigation principale">
+        <a href="#" aria-label="Accueil Café Boréal"
+          >Café <strong>Boréal</strong></a
+        >
+        <div style="display: flex; gap: 14px">
+          <a href="#menu">Menu</a>
+          <a href="#apropos">À propos</a>
+          <a class="cta" href="#commander">Commander</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <h1 id="hero-title">Votre café de quartier, torréfié avec cœur.</h1>
+          <p class="muted">
+            Grains d’origine responsable, micro-torréfaction locale, ambiance
+            chaleureuse.
+          </p>
+          <p style="margin-top: 14px">
+            <a class="cta" href="#menu">Voir le menu</a>
+          </p>
+        </div>
+        <img
+          src="https://picsum.photos/800/450?random=2"
+          alt="Tasse de café sur une table en bois"
+        />
+      </section>
+
+      <section class="features" aria-label="Avantages">
+        <article class="card">
+          <h3>Grains éthiques</h3>
+          <p class="muted">Traçabilité complète du producteur à votre tasse.</p>
+        </article>
+        <article class="card">
+          <h3>Latte art</h3>
+          <p class="muted">
+            Un latte soyeux avec une mousse parfaite, chaque fois.
+          </p>
+        </article>
+        <article class="card">
+          <h3>WIFI & espace</h3>
+          <p class="muted">
+            Travaillez confortablement, prises et banquettes partout.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="container" role="contentinfo">
+      © 2025 Café Boréal — Laval, QC
+    </footer>
+  </body>
+</html>

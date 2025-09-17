@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Café Boréal — Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-900 text-slate-200">
+    <header class="max-w-5xl mx-auto p-6">
+      <nav class="flex items-center justify-between">
+        <a href="#" class="font-bold"
+          >Café <span class="text-cyan-400">Boréal</span></a
+        >
+        <div class="flex gap-4 items-center">
+          <a class="hover:underline" href="#menu">Menu</a>
+          <a class="hover:underline" href="#apropos">À propos</a>
+          <a
+            class="bg-cyan-400 text-slate-900 font-bold px-4 py-2 rounded-lg"
+            href="#commander"
+            >Commander</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="max-w-5xl mx-auto p-6">
+      <section class="grid gap-5 items-center md:grid-cols-2">
+        <div>
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+            Votre café de quartier, torréfié avec cœur.
+          </h1>
+          <p class="text-slate-400 mt-2">
+            Grains d’origine responsable, micro-torréfaction locale, ambiance
+            chaleureuse.
+          </p>
+          <a
+            class="inline-block mt-4 bg-cyan-400 text-slate-900 font-bold px-4 py-2 rounded-lg"
+            href="#menu"
+            >Voir le menu</a
+          >
+        </div>
+        <img
+          class="w-full rounded-2xl aspect-video object-cover"
+          src="https://picsum.photos/800/450?random=4"
+          alt="Tasse de café"
+        />
+      </section>
+
+      <section class="grid gap-4 mt-8 md:grid-cols-3">
+        <article
+          class="bg-slate-800/60 border border-slate-700 rounded-2xl p-5"
+        >
+          <h3 class="text-lg font-semibold">Grains éthiques</h3>
+          <p class="text-slate-400">
+            Traçabilité complète du producteur à votre tasse.
+          </p>
+        </article>
+        <article
+          class="bg-slate-800/60 border border-slate-700 rounded-2xl p-5"
+        >
+          <h3 class="text-lg font-semibold">Latte art</h3>
+          <p class="text-slate-400">
+            Un latte soyeux avec une mousse parfaite, chaque fois.
+          </p>
+        </article>
+        <article
+          class="bg-slate-800/60 border border-slate-700 rounded-2xl p-5"
+        >
+          <h3 class="text-lg font-semibold">WIFI & espace</h3>
+          <p class="text-slate-400">
+            Travaillez confortablement, prises et banquettes partout.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer
+      class="max-w-5xl mx-auto p-6 border-t border-slate-700 text-slate-400 mt-8"
+    >
+      © 2025 Café Boréal — Laval, QC
+    </footer>
+  </body>
+</html>
