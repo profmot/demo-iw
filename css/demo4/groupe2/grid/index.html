@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .grille {
+        height: 100vh;
+        background-color: aqua;
+        border: 1px solid black;
+        display: grid;
+        grid-template-columns: 100px 1fr 100px;
+        grid-template-rows: 100px 1fr 100px;
+        grid-template-areas:
+          'entete entete entete'
+          'cotea main coteb'
+          'footer footer footer';
+      }
+      .cell1 {
+        grid-area: entete;
+        background-color: chartreuse;
+        border: 1px solid chocolate;
+      }
+      .cell2 {
+        grid-area: cotea;
+        background-color: coral;
+      }
+      .cell3 {
+        grid-area: main;
+        background-color: cyan;
+      }
+      .cell4 {
+        grid-area: coteb;
+        background-color: brown;
+      }
+      .cell5 {
+        grid-area: footer;
+        background-color: blueviolet;
+      }
+
+      @media (max-width: 768px) {
+        .grille {
+          grid-template-areas:
+            'entete'
+            'main'
+            'cotea'
+            'coteb'
+            'footer';
+
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grille">
+      <div class="cell1">1</div>
+      <div class="cell2">2</div>
+      <div class="cell3">3</div>
+      <div class="cell4">4</div>
+      <div class="cell5">5</div>
+    </div>
+  </body>
+</html>
