@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opacité, Visibility et Display avec z-index</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: url('bg.jpg') no-repeat center/cover;
+        margin: 0;
+        padding: 40px;
+        color: #000;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      .boite {
+        background-color: rgba(0, 0, 255, 0.5); /* bleu semi-transparent */
+        padding: 20px;
+        border-radius: 8px;
+        width: 300px;
+        margin-bottom: 20px;
+      }
+
+      .cadre {
+        background-color: #ffffff;
+        border: 2px dashed #333;
+        padding: 20px;
+        margin-top: 20px;
+        width: 350px;
+        height: 200px;
+        position: relative; /* référence pour position absolue */
+      }
+
+      .opacity {
+        background-color: red;
+        padding: 20px;
+        width: 200px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        opacity: 0.4; /* visible mais transparent */
+        z-index: 1;
+      }
+
+      .visibility {
+        background-color: green;
+        padding: 20px;
+        width: 200px;
+        position: absolute;
+        top: 40px;
+        left: 60px;
+        visibility: hidden; /* invisible mais espace réservé */
+        z-index: 2;
+      }
+
+      .display {
+        background-color: orange;
+        padding: 20px;
+        width: 200px;
+        position: absolute;
+        top: 60px;
+        left: 100px;
+        display: none; /* retiré du flux */
+        z-index: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exemple d’opacité et superposition</h1>
+    <div></div>
+    <div class="boite">
+      <p>Cette boîte est semi-transparente (fond seulement).</p>
+    </div>
+
+    <h2>Comparaison des comportements</h2>
+    <div class="cadre">
+      <div class="opacity">Opacity 0.4</div>
+      <div class="visibility">Visibility hidden</div>
+      <div class="display">Display none</div>
+    </div>
+
+    <p>
+      → La boîte rouge est visible et translucide.<br />
+      → La boîte verte existe mais est invisible.<br />
+      → La boîte orange est complètement retirée.<br />
+      → Vous pouvez modifier les <code>z-index</code> pour changer l’ordre des
+      superpositions.
+    </p>
+  </body>
+</html>
