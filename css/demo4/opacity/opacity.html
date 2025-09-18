@@ -67,6 +67,12 @@
         display: none; /* retiré du flux */
         z-index: 3;
       }
+      .case {
+        background-color: coral;
+        padding: 20px;
+        width: 200px;
+        position: static;
+      }
     </style>
   </head>
   <body>
@@ -78,17 +84,30 @@
 
     <h2>Comparaison des comportements</h2>
     <div class="cadre">
-      <div class="opacity">Opacity 0.4</div>
-      <div class="visibility">Visibility hidden</div>
-      <div class="display">Display none</div>
+      <div style="width: 100%; height: 100px">
+        <div class="opacity">Opacity 0.4</div>
+        <div class="visibility">Visibility hidden</div>
+        <div class="display">Display none</div>
+      </div>
+      <p>
+        → La boîte rouge est visible et translucide.<br />
+        → La boîte verte existe mais est invisible.<br />
+        → La boîte orange est complètement retirée.<br />
+        → Vous pouvez modifier les <code>z-index</code> pour changer l’ordre des
+        superpositions.
+      </p>
     </div>
 
-    <p>
-      → La boîte rouge est visible et translucide.<br />
-      → La boîte verte existe mais est invisible.<br />
-      → La boîte orange est complètement retirée.<br />
-      → Vous pouvez modifier les <code>z-index</code> pour changer l’ordre des
-      superpositions.
-    </p>
+    <h2>Comparaison</h2>
+    <div class="cadre">
+      <div class="case" onclick="alert('cliqué')">Opacity 0</div>
+      <div class="case" onclick="alert('cliqué')">Visibility hidden</div>
+      <div class="case" onclick="alert('cliqué')">Display none</div>
+
+      <p>
+        → modifier manuellement les propriétés display none, visibility hidden
+        et opacity CSS pour voir les différences.
+      </p>
+    </div>
   </body>
 </html>
