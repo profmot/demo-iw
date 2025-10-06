@@ -111,6 +111,7 @@ console.log(flechee1(2, 3));
 console.log(flecheeCube(2));
 */
 
+/*
 console.log('----callback-----');
 const afficherConsole = (msg) => console.log(msg);
 const afficherAlert = (msg) => alert(msg);
@@ -135,3 +136,48 @@ const c = compteur(10);
 c();
 c();
 c();
+
+*/
+//Objets tableaux
+
+const voiture = {
+  marque: 'Toyota',
+  annee: 2023,
+  couleur: 'bleu',
+  vitesse: 100,
+  turbo: 20,
+  hautParleur: {
+    noSerie: '344hfh43',
+    marque: 'bose',
+  },
+  calculVitesseMax: function () {
+    console.log(this);
+    return this.vitesse + this.turbo;
+  },
+};
+console.log('vitesseMaximum: ', voiture.calculVitesseMax());
+
+console.log('marque', voiture.marque);
+console.log('marque-speaker', voiture.hautParleur.marque);
+
+console.log('marque', voiture['marque']);
+console.log('marque-speaker', voiture['hautParleur'].marque);
+
+/*let question = prompt('que cherchez vous?');
+
+alert(voiture[question]);
+*/
+
+class Automobile {
+  constructor(marque, couleur, vitesse, turbo) {
+    this.marque = marque;
+    this.couleur = couleur;
+    this.vitesse = vitesse;
+    this.turbo = turbo;
+    this.nbPassagers = 0;
+  }
+}
+
+let monAuto = new Automobile('Toyota', 'rouge', 100, 20);
+
+console.log('monAuto', monAuto);
