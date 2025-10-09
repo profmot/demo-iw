@@ -140,44 +140,154 @@ c();
 */
 //Objets tableaux
 
-const voiture = {
-  marque: 'Toyota',
-  annee: 2023,
-  couleur: 'bleu',
-  vitesse: 100,
-  turbo: 20,
-  hautParleur: {
-    noSerie: '344hfh43',
-    marque: 'bose',
-  },
-  calculVitesseMax: function () {
-    console.log(this);
-    return this.vitesse + this.turbo;
-  },
-};
-console.log('vitesseMaximum: ', voiture.calculVitesseMax());
+// const voiture = {
+//   marque: 'Toyota',
+//   annee: 2023,
+//   couleur: 'bleu',
+//   vitesse: 100,
+//   turbo: 20,
+//   hautParleur: {
+//     noSerie: '344hfh43',
+//     marque: 'bose',
+//   },
+//   calculVitesseMax: function () {
+//     console.log(this);
+//     return this.vitesse + this.turbo;
+//   },
+// };
+// console.log('vitesseMaximum: ', voiture.calculVitesseMax());
 
-console.log('marque', voiture.marque);
-console.log('marque-speaker', voiture.hautParleur.marque);
+// console.log('marque', voiture.marque);
+// console.log('marque-speaker', voiture.hautParleur.marque);
 
-console.log('marque', voiture['marque']);
-console.log('marque-speaker', voiture['hautParleur'].marque);
+// console.log('marque', voiture['marque']);
+// console.log('marque-speaker', voiture['hautParleur'].marque);
 
-/*let question = prompt('que cherchez vous?');
+// /*let question = prompt('que cherchez vous?');
 
-alert(voiture[question]);
-*/
+// alert(voiture[question]);
+// */
 
-class Automobile {
-  constructor(marque, couleur, vitesse, turbo) {
-    this.marque = marque;
-    this.couleur = couleur;
-    this.vitesse = vitesse;
-    this.turbo = turbo;
-    this.nbPassagers = 0;
-  }
-}
+// class Automobile {
+//   constructor(marque, couleur, vitesse, turbo) {
+//     this.marque = marque;
+//     this.couleur = couleur;
+//     this.vitesse = vitesse;
+//     this.turbo = turbo;
+//     this.nbPassagers = 0;
+//   }
+// }
 
-let monAuto = new Automobile('Toyota', 'rouge', 100, 20);
+// let monAuto = new Automobile('Toyota', 'rouge', 100, 20);
+// monAuto.couleur = 'Orange';
+// console.log('monAuto', monAuto);
 
-console.log('monAuto', monAuto);
+// class AutoElect extends Automobile {
+//   constructor(marque, couleur, vitesse, turbo, grosseurPile) {
+//     super(marque, couleur, vitesse, turbo);
+//     this.grosseurPile = grosseurPile;
+//   }
+//   calculTempsRecharge = () => {
+//     console.log('this', this);
+//     console.log('temps de recharge', this.grosseurPile);
+//   };
+// }
+// const monAutoelectrique = new AutoElect('Toyota', 'rouge', 100, 20, 6);
+// console.log('1', monAutoelectrique.calculTempsRecharge());
+// monAutoelectrique.marque = 'honda';
+
+// document
+//   .getElementById('btn')
+//   .addEventListener('click', monAutoelectrique.calculTempsRecharge);
+
+//Tableau
+
+const fruits = ['Pomme', 'Poire', 'Melon'];
+
+//console.log(fruits.length);
+//console.log(fruits[0]);
+fruits[0] = 'Banane';
+//console.log(fruits[0]);
+fruits.push('Fraises');
+fruits.push('Bleuet');
+
+const petitTableau = fruits.slice(1, 3);
+//console.log('petitTableau', petitTableau);
+
+fruits.splice(1, 2);
+console.log(fruits);
+
+// for (let fruit of fruits) {
+//   console.log(fruit);
+// }
+
+//fruits.forEach((fruit) => console.log(fruit));
+
+// const produits = [
+//   { nom: 'tasse', prix: 2 },
+//   { nom: 'télé', prix: 20 },
+//   { nom: 'manteau', prix: 5 },
+// ];
+
+// const nomsDeProduit = produits.map((produit) => {
+//   return { nom: produit.nom, prixtaxe: produit.prix * 1.15 };
+// });
+// console.log(produits);
+// console.log(nomsDeProduit);
+
+// const produitsAPetitPrix = produits.filter((produit) => {
+//   return produit.prix < 10;
+// });
+
+// console.log(produitsAPetitPrix);
+
+// const produitTasse = produits.find((produit) => {
+//   return produit.nom === 'tasse';
+// });
+
+// console.log(produitTasse);
+
+//Destructuring
+
+// const joueur = {
+//   nom: 'Tommy',
+//   jeu: 'lesCartes',
+//   score: '45',
+//   rang: 2,
+// };
+
+// function afficheJoueurEtJeu({ nom, jeu }) {
+//   console.log(`${nom} joue au jeu ${jeu}`);
+// }
+
+// afficheJoueurEtJeu(joueur);
+
+// const { nom, jeu } = joueur;
+// const tab = [1, 2, 43, 5, 7, 8, 9, 7];
+// const [premierChiffe, , troisiemechiffre] = tab;
+
+// let a = 3,
+//   b = 9;
+// [b, a] = [a, b];
+
+// const joueurChrono = {
+//   ...joueur,
+//   tempsDejeu: 4,
+//   jeu: 'baseball',
+// };
+
+// const tab2 = [...tab, 'allo'];
+
+// console.log(tab2);
+// console.log(joueurChrono);
+
+//Gestion du temps
+
+const idInterval = setInterval(() => {
+  console.log('message à interval de 2 sec...', new Date().getTime());
+}, 2000);
+
+setTimeout(() => {
+  clearInterval(idInterval);
+  console.log('Message après 10 secondes...');
+}, 10000);
