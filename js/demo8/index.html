@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Démos DOM & Événements</title>
+    <style>
+      .boite {
+        padding: 8px;
+        border: 1px solid #ccc;
+        margin: 6px 0;
+      }
+      .important {
+        border-color: #e00;
+      }
+      .cache {
+        display: none;
+      }
+      .selection {
+        outline: 2px solid #007acc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="titre">Démos DOM</h1>
+    <p class="boite">Paragraphe A</p>
+    <p class="boite example">Paragraphe B</p>
+    <div id="conteneur">
+      <h3>Zone</h3>
+      <p>Texte dans le conteneur</p>
+    </div>
+
+    <a id="lien" href="https://example.com" target="_blank">Visiter</a>
+
+    <hr />
+
+    <button id="btn">Bouton</button>
+
+    <ul id="liste" class="boite">
+      <li>Élément 1</li>
+      <li>Élément 2</li>
+    </ul>
+
+    <form id="formEx" class="boite">
+      <label>Prénom: <input id="prenom" name="prenom" /></label>
+      <label>Courriel: <input id="email" name="email" /></label>
+      <select id="choix" name="choix">
+        <option>Banane</option>
+        <option>Pomme</option>
+        <option value="autre">Autre</option>
+      </select>
+      <div id="autreChamp" class="cache">
+        <input name="autre_val" placeholder="Précisez" />
+      </div>
+      <button type="submit">Envoyer</button>
+    </form>
+
+    <textarea
+      id="resultArea"
+      rows="5"
+      cols="40"
+      class="boite"
+      placeholder="Résultats..."
+    ></textarea>
+  </body>
+</html>
