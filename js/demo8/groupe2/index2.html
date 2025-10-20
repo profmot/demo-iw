@@ -12,35 +12,47 @@
       <li>pomme</li>
       <li>poire</li>
     </ul>
+    <button id="monButton">click ici!</button>
   </body>
 
   <script>
-    let monA = document.getElementById('monA');
-    console.log(monA.hasAttribute('target'));
-    console.log(monA.getAttribute('target'));
-    monA.setAttribute('href', 'http://www.google.com');
-    const nouvTitre = document.createElement('h1');
-    nouvTitre.innerText = 'Montitre';
-    nouvTitre.classList.add('une-classe');
+    const monButton = document.getElementById('monButton');
+    monButton.addEventListener('click', () => {
+      alert('cliqué!');
+    });
+    //event listener
 
-    //document.body.appendChild(nouvTitre);
+    // let monA = document.getElementById('monA');
+    // console.log(monA.hasAttribute('target'));
+    // console.log(monA.getAttribute('target'));
+    // monA.setAttribute('href', 'http://www.google.com');
+    // const nouvTitre = document.createElement('h1');
+    // nouvTitre.innerText = 'Montitre';
+    // nouvTitre.classList.add('une-classe');
 
-    const monBody = document.querySelector('body');
+    // //document.body.appendChild(nouvTitre);
 
-    //monBody.append(nouvTitre);
+    // const monBody = document.querySelector('body');
 
-    monBody.prepend(nouvTitre);
+    // //monBody.append(nouvTitre);
 
-    const nouvLi = document.createElement('li');
-    nouvLi.innerText = 'banane';
-    const monLi = document.querySelector('ul li');
+    // monBody.prepend(nouvTitre);
 
-    // monLi.before(nouvLi);
+    // const nouvLi = document.createElement('li');
+    // nouvLi.innerText = 'banane';
+    // const monLi = document.querySelector('ul li');
 
-    //    monLi.after(nouvLi);
+    // // monLi.before(nouvLi);
 
-    //  monLi.remove();
+    // //    monLi.after(nouvLi);
 
-    monLi.replaceWith(nouvLi);
+    // //  monLi.remove();
+
+    // monLi.replaceWith(nouvLi);
+
+    // const monUL = document.querySelector('ul');
+    // const monnouveauUl = monUL.cloneNode(false);
+
+    // document.body.append(monnouveauUl);
   </script>
 </html>
