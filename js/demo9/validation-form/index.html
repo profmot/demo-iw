@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        display: grid;
+        gap: 12px;
+        max-width: 320px;
+      }
+
+      select {
+        padding: 8px;
+        border: 2px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      select:focus {
+        outline: none;
+        border-color: dodgerblue;
+        box-shadow: 0 0 4px dodgerblue;
+      }
+      button {
+        background: dodgerblue;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 14px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      button:hover {
+        background: royalblue;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#">
+      radio buttons:
+      <br />
+      <label><input type="radio" name="genre" value="m" /> M</label>
+      <label><input type="radio" name="genre" value="f" /> F</label>
+      checkboxes:
+      <br />
+      <label><input type="checkbox" name="tags" value="js" /> JS</label>
+      <label><input type="checkbox" name="tags" value="css" /> CSS</label>
+      select:
+      <br />
+      <select name="prefs" multiple>
+        <option value="dark">Sombre</option>
+        <option value="large">Police large</option>
+      </select>
+      <button>Submit</button>
+    </form>
+    <script>
+      const form = document.querySelector('form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const data = Object.fromEntries(fd.entries()); // perd les doublons
+        console.log('avant', data);
+        data.tags = fd.getAll('tags');
+        data.tags = fd.getAll('tags'); // ["js","css"] si plusieurs cochés
+        data.prefs = fd.getAll('prefs'); // valeurs sélectionnées
+        console.log('apres', data);
+      });
+    </script>
+  </body>
+</html>

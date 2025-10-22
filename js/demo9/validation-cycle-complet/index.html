@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        display: grid;
+        gap: 12px;
+        max-width: 320px;
+      }
+      input {
+        padding: 8px;
+
+        border: 2px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      button[type='submit'] {
+        background: dodgerblue;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 14px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="formulaire" action="#">
+      <label>
+        Email:
+        <input name="email" required />
+      </label>
+      <label>
+        Password:
+        <input type="password" name="password" required minlength="6" />
+      </label>
+      <label>
+        Se souvenir de moi:
+        <input type="checkbox" name="remember" />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="message"></div>
+  </body>
+  <script>
+    class Utilisateur {
+      constructor({ email, password, remember }) {
+        this.email = String(email).trim().toLowerCase();
+        this.password = String(password);
+        this.remember = Boolean(remember);
+      }
+      valider() {
+        if (!this.email.includes('@')) throw new Error('Courriel invalide');
+        if (this.password.length < 8)
+          throw new Error('Mot de passe trop court');
+      }
+    }
+    const form = document.getElementById('formulaire');
+    const msg = document.getElementById('message');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) return;
+
+      const raw = Object.fromEntries(new FormData(form));
+      const user = new Utilisateur(raw);
+
+      try {
+        user.valider();
+        localStorage.setItem('user', JSON.stringify(user));
+
+        msg.innerText = 'Utilisateur enregistré avec succès.';
+      } catch (err) {
+        msg.innerText = `Erreur: ${err.message}`;
+      }
+    });
+  </script>
+</html>
