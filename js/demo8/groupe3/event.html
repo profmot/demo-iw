@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="myButton">Click Me!</button>
+
+    <div>un div</div>
+
+    <script>
+      const button = document.getElementById('myButton');
+
+      const monDiv = document.querySelector('div');
+
+      const monHandler = () => {
+        alert('Button was clicked!');
+      };
+      // Adding an event listener for the 'click' event
+      button.addEventListener('click', monHandler);
+      monDiv.addEventListener('click', () => {
+        console.log('div cliqué!');
+      });
+      button.addEventListener('click', () => {
+        console.log('cliqué 2!');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="height: 1500px">
+    <div style="padding: 10px">
+      <div
+        id="zone"
+        style="width: 150px; height: 100px; background: lightcoral"
+      >
+        Cliquez ici
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const zone = document.getElementById('zone');
+
+  zone.addEventListener('click', (event) => {
+    console.log('Position du clic :');
+    console.log(`client : ${event.clientX}, ${event.clientY}`);
+    console.log(`page   : ${event.pageX}, ${event.pageY}`);
+    console.log(`screen : ${event.screenX}, ${event.screenY}`);
+  });
+
+  zone.addEventListener('click', (event) => {
+    const rect = zone.getBoundingClientRect();
+
+    console.log('Coordonnées de la zone :');
+    console.log(`x: ${rect.x}, y: ${rect.y}`);
+    console.log(`width: ${rect.width}, height: ${rect.height}`);
+
+    // Vérifie si le clic est dans la moitié droite
+    if (event.clientX > rect.x + rect.width / 2) {
+      zone.style.background = 'lightgreen';
+    } else {
+      zone.style.background = 'lightblue';
+    }
+  });
+</script>
