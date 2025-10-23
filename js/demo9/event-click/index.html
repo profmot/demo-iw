@@ -18,6 +18,9 @@
 </html>
 
 <script>
+  //generer une erreur pour que le code bloque
+  throw new Error("Le bug provient d'ici...");
+
   const zone = document.getElementById('zone');
 
   zone.addEventListener('click', (event) => {

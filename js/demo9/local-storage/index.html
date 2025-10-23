@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="zone"></div>
+    <button id="btn-add-storage">ajoute</button>
+    <button id="btn-remove-storage">enleve</button>
+
+    <script>
+      const btnAdd = document.getElementById('btn-add-storage');
+
+      const btnRemove = document.getElementById('btn-remove-storage');
+      const zone = document.getElementById('zone');
+      const retrievedData = JSON.parse(localStorage.getItem('userData'));
+      zone.innerHTML = retrievedData
+        ? `Nom: ${retrievedData.name}, Age: ${retrievedData.age}, Ville: ${retrievedData.city}`
+        : 'pas de données.';
+      btnAdd.addEventListener('click', () => {
+        const userData = {
+          name: 'Jimmy Nelson',
+          age: 30,
+          city: 'Laval',
+        };
+        localStorage.setItem('userData', JSON.stringify(userData));
+        alert('Data saved to local storage.');
+      });
+      btnRemove.addEventListener('click', () => {
+        localStorage.removeItem('userData');
+        zone.innerHTML = '';
+        alert('Data removed from local storage.');
+      });
+    </script>
+  </body>
+</html>
