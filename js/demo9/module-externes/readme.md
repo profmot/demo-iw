@@ -17,3 +17,11 @@ Lance le serveur de développement avec rechargement automatique :
 ```bash
 npm run dev
 ```
+
+### Build
+
+Compile l'application pour la production :
+
+```bash
+npm run build
+```
