@@ -14,12 +14,17 @@
         Cliquez ici
       </div>
     </div>
+
+    <a id="liena" href="http://www.google.ca">mon lien</a>
   </body>
 </html>
 
 <script>
-  //generer une erreur pour que le code bloque
-  throw new Error("Le bug provient d'ici...");
+  const monLien = document.getElementById('liena');
+  monLien.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log('Clic sur le lien détecté.');
+  });
 
   const zone = document.getElementById('zone');
 
@@ -36,6 +41,7 @@
       const rect = zone.getBoundingClientRect();
 
       console.log('Coordonnées de la zone :');
+      console.log('rect', rect);
       console.log(`x: ${rect.x}, y: ${rect.y}`);
       console.log(`width: ${rect.width}, height: ${rect.height}`);
 
