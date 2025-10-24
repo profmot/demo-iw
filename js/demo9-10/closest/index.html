@@ -20,11 +20,12 @@
     <script>
       const toolbar = document.querySelector('.toolbar');
       toolbar.addEventListener('click', (event) => {
+        console.log('Cible du clic:', event.target);
         const button = event.target.closest('button[data-action]');
         if (!button) return;
 
         const action = button.dataset.action;
-        console.log('Action détectée:', event.target, action);
+        console.log('Action détectée:', action);
       });
     </script>
   </body>

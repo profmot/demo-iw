@@ -15,7 +15,7 @@
 
       const btnRemove = document.getElementById('btn-remove-storage');
       const zone = document.getElementById('zone');
-      const retrievedData = JSON.parse(localStorage.getItem('userData'));
+      const retrievedData = JSON.parse(sessionStorage.getItem('userData'));
       zone.innerHTML = retrievedData
         ? `Nom: ${retrievedData.name}, Age: ${retrievedData.age}, Ville: ${retrievedData.city}`
         : 'pas de données.';
@@ -25,11 +25,11 @@
           age: 30,
           city: 'Laval',
         };
-        localStorage.setItem('userData', JSON.stringify(userData));
+        sessionStorage.setItem('userData', JSON.stringify(userData));
         alert('Data saved to local storage.');
       });
       btnRemove.addEventListener('click', () => {
-        localStorage.removeItem('userData');
+        sessionStorage.removeItem('userData');
         zone.innerHTML = '';
         alert('Data removed from local storage.');
       });
