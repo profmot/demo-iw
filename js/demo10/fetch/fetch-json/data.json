@@ -1,0 +1,10 @@
+{
+  "etudiants": [
+    { "nom": "Anne", "age": 21, "ville": "Gatineau" },
+    { "nom": "Charles-Antoine", "age": 21, "ville": "Longueil" },
+    { "nom": "Émile", "age": 22, "ville": "Montréal" },
+    { "nom": "Léa-Jeanne", "age": 22, "ville": "Laval" },
+    { "nom": "Rose-aline", "age": 20, "ville": "Laval" },
+    { "nom": "Zachary", "age": 20, "ville": "Rosemère" }
+  ]
+}

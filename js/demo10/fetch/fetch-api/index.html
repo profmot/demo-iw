@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Démo Fetch API Publique</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 2rem;
+      }
+      #btnCharger {
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      #resultats {
+        margin-top: 1rem;
+      }
+      .erreur {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Démo Fetch — API publique</h1>
+    <p>
+      On va charger des produits depuis
+      <code>https://dummyjson.com/products?limit=5</code>
+    </p>
+
+    <button id="btnCharger">Charger les produits</button>
+    <div id="resultats"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
