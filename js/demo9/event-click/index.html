@@ -14,12 +14,25 @@
         Cliquez ici
       </div>
     </div>
-
+    <button id="monButton"><span>contenudansspan</span>clickIci</button>
     <a id="liena" href="http://www.google.ca">mon lien</a>
+    <input type="text" name="ttt" id="ttt" />
   </body>
 </html>
 
 <script>
+  const ttt = document.getElementById('ttt');
+  ttt.addEventListener('keydown', (e) => {
+    console.log(`Touche appuyée: ${e.key}`);
+    console.log(e);
+
+    console.log('Clic sur le champ de texte détecté.');
+  });
+  const monButton = document.getElementById('monButton');
+  monButton.addEventListener('click', () => {
+    console.log('Clic sur le bouton détecté.');
+  });
+
   const monLien = document.getElementById('liena');
   monLien.addEventListener('click', (event) => {
     event.preventDefault();
