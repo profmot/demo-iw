@@ -1,6 +1,3 @@
-// util.js
-export function addition(a, b) {
-  return a + b;
+export function ecrireMessage(msg) {
+  console.log('Message : ' + msg);
 }
-
-
