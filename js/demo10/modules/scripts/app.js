@@ -21,9 +21,15 @@
 // console.log(MathsUtil.addition(7, 8)); // 15
 // MathsUtil.ecrireMessage('Bonjour le monde !'); // Message : Bonjour le monde !
 
-let button = document.getElementById('button');
+// //5 demo import dynamique
+// let button = document.getElementById('button');
 
-button.addEventListener('click', async () => {
-  const { openModal } = await import('./modal.js');
-  openModal();
-});
+// button.addEventListener('click', async () => {
+//   const { openModal } = await import('./modal.js');
+//   openModal();
+// });
+// // //6
+// // main.js
+// import { count, inc } from './counter.js';
+// inc();
+// console.log(count); // 1 (valeur mise à jour)
