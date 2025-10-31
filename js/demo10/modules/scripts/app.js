@@ -20,3 +20,10 @@
 // import * as MathsUtil from './index.js';
 // console.log(MathsUtil.addition(7, 8)); // 15
 // MathsUtil.ecrireMessage('Bonjour le monde !'); // Message : Bonjour le monde !
+
+let button = document.getElementById('button');
+
+button.addEventListener('click', async () => {
+  const { openModal } = await import('./modal.js');
+  openModal();
+});
