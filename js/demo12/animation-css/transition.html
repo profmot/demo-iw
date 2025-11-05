@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <title>Transitions CSS — Démo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --ink: #1f2937;
+        --bd: #e5e7eb;
+        --bg: #f8fafc;
+      }
+      body {
+        font-family: system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        margin: 2rem;
+      }
+      .btn {
+        padding: 0.6rem 1rem;
+        border: 1px solid var(--bd);
+        border-radius: 0.6rem;
+        cursor: pointer;
+        background: #fff;
+      }
+      .panel {
+        width: 320px;
+        margin-top: 1rem;
+        padding: 1rem;
+        border: 1px solid var(--bd);
+        border-radius: 0.8rem;
+        /* État initial */
+        opacity: 0;
+        transform: translateY(12px);
+        /* Transition : on précise quoi, durée, easing, délais (0 ici) */
+        transition-property: opacity, transform;
+        transition-duration: 300ms, 300ms;
+        transition-timing-function: ease-out, ease-out;
+        transition-delay: 0ms, 0ms;
+      }
+      /* État final (quand la classe est ajoutée) */
+      .panel.is-open {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Respect des préférences d’accessibilité */
+      @media (prefers-reduced-motion: reduce) {
+        .panel {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Transitions CSS</h1>
+    <button id="toggle" class="btn">Ouvrir / Fermer</button>
+    <div id="panel" class="panel" aria-hidden="true">
+      Contenu du panneau (transition d’opacité + transform).
+    </div>
+
+    <script>
+      const btn = document.getElementById('toggle');
+      const panel = document.getElementById('panel');
+
+      btn.addEventListener('click', () => {
+        panel.classList.toggle('is-open');
+        panel.setAttribute(
+          'aria-hidden',
+          panel.classList.contains('is-open') ? 'false' : 'true'
+        );
+      });
+    </script>
+  </body>
+</html>

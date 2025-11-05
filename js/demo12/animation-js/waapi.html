@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <title>WAAPI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        background: #f8fafc;
+        color: #1f2937;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 1rem;
+      }
+
+      .box {
+        width: 200px;
+        height: 200px;
+        background: #3b82f6;
+        border-radius: 1rem;
+        opacity: 0; /* invisible au départ */
+        will-change: opacity;
+      }
+
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+      }
+
+      button {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        background: #fff;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #f3f4f6;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .box {
+          opacity: 1 !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Web Animations API — Apparition simple</h1>
+
+    <div class="box" id="box"></div>
+
+    <div class="controls">
+      <button id="show">Afficher</button>
+      <button id="hide">Masquer</button>
+      <button id="play">Play</button>
+      <button id="pause">Pause</button>
+      <button id="reverse">Reverse</button>
+      <button id="cancel">Cancel</button>
+    </div>
+
+    <script>
+      const box = document.getElementById('box');
+
+      const options = {
+        duration: 800,
+        easing: 'ease-out',
+        fill: 'forwards', // conserve l'état final
+      };
+
+      let anim; // variable pour stocker l'animation active
+
+      // Apparition
+      function showBox() {
+        cancelAnim();
+        anim = box.animate([{ opacity: 0 }, { opacity: 1 }], options);
+      }
+
+      // Disparition
+      function hideBox() {
+        cancelAnim();
+        anim = box.animate([{ opacity: 1 }, { opacity: 0 }], options);
+      }
+
+      // Contrôles
+      function playAnim() {
+        anim?.play();
+      }
+      function pauseAnim() {
+        anim?.pause();
+      }
+      function reverseAnim() {
+        anim?.reverse();
+      }
+
+      // Lier les boutons
+      document.getElementById('show').addEventListener('click', showBox);
+      document.getElementById('hide').addEventListener('click', hideBox);
+      document.getElementById('play').addEventListener('click', playAnim);
+      document.getElementById('pause').addEventListener('click', pauseAnim);
+      document.getElementById('reverse').addEventListener('click', reverseAnim);
+    </script>
+  </body>
+</html>

@@ -1,13 +1,13 @@
-fetch('https://dummyjson.com/products?limit=5')
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => {
-    console.error('Erreur :', err);
-  });
+// fetch('https://dummyjson.com/products?limit=5')
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.error('Erreur :', err);
+//   });
 
-console.log('Après fetch');
+// console.log('Après fetch');
 
 async function chargerProduits() {
   try {

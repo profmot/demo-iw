@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <title>requestAnimationFrame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --ball-size: 50px;
+      }
+      body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(180deg, #0b1320, #1e293b);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #f8fafc;
+        font-family: system-ui, sans-serif;
+      }
+
+      .ball {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--ball-size);
+        height: var(--ball-size);
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, #60a5fa, #1d4ed8);
+        box-shadow: 0 0 15px #3b82f6;
+        will-change: transform;
+      }
+
+      .controls {
+        position: fixed;
+        bottom: 20px;
+        display: flex;
+        gap: 1rem;
+      }
+      button {
+        background: #1d4ed8;
+        border: none;
+        color: white;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      button:hover {
+        background: #2563eb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ball" id="ball"></div>
+
+    <div class="controls">
+      <button id="toggle">Pause</button>
+    </div>
+
+    <script src="raf.js"></script>
+  </body>
+</html>

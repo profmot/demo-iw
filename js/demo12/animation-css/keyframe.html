@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <title>Animations CSS — Keyframes (pulse + slide-in)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --ink: #1f2937;
+        --bd: #e5e7eb;
+        --bg: #f8fafc;
+      }
+      body {
+        font-family: system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        margin: 2rem;
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      /* 1) Pulse infini (décoratif) */
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.08);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .badge {
+        display: inline-block;
+        padding: 0.4rem 0.7rem;
+        border: 1px solid var(--bd);
+        border-radius: 999px;
+        animation-name: pulse;
+        animation-duration: 1200ms;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+      }
+
+      /* 2) Slide-in simple (une fois, et garde l’état final) */
+      @keyframes slideIn {
+        from {
+          transform: translateY(18px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .card {
+        width: 320px;
+        padding: 1rem;
+        border: 1px solid var(--bd);
+        border-radius: 0.8rem;
+        background: #fff;
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      .card.animate {
+        animation: slideIn 600ms ease-out 150ms forwards;
+        /* duration=600ms, easing=ease-out, delay=150ms, fill-mode=forwards */
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .badge,
+        .card {
+          animation: none !important;
+        }
+        .card {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Keyframes CSS</h1>
+
+    <p><span class="badge" aria-hidden="true">Nouveau</span></p>
+
+    <button id="show">Afficher la carte (slide-in)</button>
+    <div id="card" class="card" role="region" aria-live="polite">
+      Carte affichée avec une animation @keyframes (slide-in).
+    </div>
+
+    <script>
+      document.getElementById('show').addEventListener('click', () => {
+        document.getElementById('card').classList.add('animate');
+      });
+    </script>
+  </body>
+</html>
