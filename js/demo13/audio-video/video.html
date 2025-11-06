@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <meta charset="utf-8" />
+  <title>Caméra + Prendre une photo</title>
+
+  <video id="cam" autoplay playsinline></video
+  ><br />
+  <button id="btnCam">Activer la caméra</button>
+  <button id="btnPhoto" disabled>Prendre une photo</button>
+  <br /><br />
+  <canvas id="canvas" hidden></canvas>
+  <!--  Le <canvas> sert d’intermédiaire (on ne l’affiche pas).
+        Le résultat est affiché dans le <img> juste en dessous.
+  -->
+  <img
+    id="photo"
+    alt="Photo capturée"
+    style="max-width: 100%; border: 1px solid #ccc"
+  />
+
+  <script>
+    let stream;
+
+    // Activer la caméra
+    document.getElementById('btnCam').addEventListener('click', async () => {
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+            facingMode: 'user',
+          },
+          audio: false,
+        });
+        const video = document.getElementById('cam');
+        video.srcObject = stream;
+        document.getElementById('btnPhoto').disabled = false;
+      } catch (err) {
+        alert('Caméra indisponible: ' + err.name);
+      }
+    });
+
+    // Prendre une photo
+    document.getElementById('btnPhoto').addEventListener('click', () => {
+      const video = document.getElementById('cam');
+      const canvas = document.getElementById('canvas');
+      const img = document.getElementById('photo');
+
+      // Ajuster la taille du canvas à la vidéo
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+      // Convertir le contenu du canvas en image (base64)
+      img.src = canvas.toDataURL('image/png');
+    });
+  </script>
+</html>

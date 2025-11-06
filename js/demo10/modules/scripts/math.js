@@ -4,10 +4,16 @@ function moyenne(arr) {
 }
 
 function somme(arr) {
+  message('Calcul de la somme...');
   return arr.reduce((acc, val) => acc + val, 0);
 }
 
-function addition(a, b) {
+function message(message) {
+  console.log('Message : ' + message);
+}
+
+export function addition(a, b) {
+  message('Addition dans math.js : ' + (a + b));
   return a + b;
 }
 
@@ -16,8 +22,8 @@ function soustraction(a, b) {
   return a - b;
 }
 
-const PI = 3.14159;
+export const PI = 3.14159;
 
-//export default { moyenne, somme, addition, soustraction, PI };
+export default { moyenne, somme, addition, soustraction, PI };
 
-export { moyenne, somme, addition, soustraction, PI };
+//export { addition, PI, soustraction };

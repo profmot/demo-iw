@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btnCopy">Copier</button>
+    <script>
+      document.getElementById('btnCopy').addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText('Bonjour du web!');
+          alert('Texte copié dans le presse-papier!');
+        } catch (err) {
+          console.error('Échec de la copie:', err);
+        }
+      });
+    </script>
+    <button id="btnRead">Lire le presse-papier</button>
+    <script>
+      document.getElementById('btnRead').addEventListener('click', async () => {
+        try {
+          const texte = await navigator.clipboard.readText();
+          alert('Texte lu: ' + texte);
+        } catch (err) {
+          console.error('Échec de la lecture:', err);
+        }
+      });
+    </script>
+  </body>
+</html>

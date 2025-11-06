@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="startWatch">Suivre</button>
+    <button id="stopWatch" disabled>Arrêter</button>
+    <pre id="live"></pre>
+    <script>
+      let watchId = null;
+      const live = document.getElementById('live');
+
+      document.getElementById('startWatch').addEventListener('click', () => {
+        if (!navigator.geolocation) return alert('Non supporté.');
+        watchId = navigator.geolocation.watchPosition(
+          (pos) => {
+            const { latitude, longitude, speed } = pos.coords;
+            live.textContent = `lat: ${latitude}  lon: ${longitude}  speed: ${
+              speed ?? '?'
+            } m/s`;
+          },
+          (err) => (live.textContent = `Erreur: ${err.code} (${err.message})`),
+          { enableHighAccuracy: true, maximumAge: 0 }
+        );
+        document.getElementById('stopWatch').disabled = false;
+      });
+
+      document.getElementById('stopWatch').addEventListener('click', () => {
+        if (watchId !== null) navigator.geolocation.clearWatch(watchId);
+        watchId = null;
+        live.textContent = 'arrêté';
+        document.getElementById('stopWatch').disabled = true;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btnScreen">Partager l’écran</button>
+    <video id="screen" autoplay playsinline></video>
+    <script>
+      document
+        .getElementById('btnScreen')
+        .addEventListener('click', async () => {
+          try {
+            const stream = await navigator.mediaDevices.getDisplayMedia({
+              video: true,
+              audio: false,
+            });
+            document.getElementById('screen').srcObject = stream;
+          } catch (err) {
+            console.warn('Partage annulé ou refusé:', err.name);
+          }
+        });
+    </script>
+  </body>
+</html>

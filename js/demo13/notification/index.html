@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <meta charset="utf-8" />
+  <title>Démo Notification API</title>
+
+  <button id="btnPerm">Demander la permission</button>
+  <button id="btnNotif">Afficher une notification</button>
+
+  <script>
+    // Demande la permission d’envoyer des notifications
+    document.getElementById('btnPerm').addEventListener('click', async () => {
+      if (!('Notification' in window)) {
+        alert('Notifications non supportées dans ce navigateur.');
+        return;
+      }
+      const perm = await Notification.requestPermission();
+      alert('Permission : ' + perm);
+    });
+
+    // Affiche une notification simple
+    document.getElementById('btnNotif').addEventListener('click', () => {
+      if (Notification.permission !== 'granted') {
+        alert('Permission non accordée !');
+        return;
+      }
+      const notif = new Notification('Bonjour 👋', {
+        body: 'Ceci est une notification locale !',
+        icon: './img/893292.png',
+      });
+      notif.onclick = () => window.focus();
+    });
+  </script>
+</html>

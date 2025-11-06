@@ -16,3 +16,7 @@ console.log(`La somme est ${a + b}`);
 
 const age = 18;
 console.log(`Vous êtes ${age >= 18 ? 'majeur' : 'mineur'}`);
+
+function test() {
+  console.log('Ceci est une fonction de test.');
+}
