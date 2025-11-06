@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manipulation de dates ISO</title>
+  </head>
+  <body>
+    <h1>Manipulation de dates ISO</h1>
+
+    <form>
+      <label for="d">Date (sans heure) :</label><br />
+      <input id="d" name="d" type="date" /><br /><br />
+
+      <label for="dt">Date et heure :</label><br />
+      <input id="dt" name="dt" type="datetime-local" /><br /><br />
+
+      <button id="btnAfficher" type="button">Afficher les valeurs ISO</button>
+      <button id="btnNow" type="button">Assigner Date.now()</button>
+    </form>
+
+    <h2>Résultat :</h2>
+    <pre id="out">Aucune donnée pour l’instant.</pre>
+
+    <script>
+      const dateInput = document.getElementById('d');
+      const dateTimeInput = document.getElementById('dt');
+      const btnAfficher = document.getElementById('btnAfficher');
+      const btnNow = document.getElementById('btnNow');
+      const out = document.getElementById('out');
+
+      // Bouton : afficher les valeurs actuelles en ISO
+      btnAfficher.addEventListener('click', () => {
+        const dateValue = dateInput.value;
+        const dateTimeValue = dateTimeInput.value;
+
+        const isoDate = dateValue ? dateValue : '(aucune)';
+        const isoDateTime = dateTimeValue
+          ? new Date(dateTimeValue).toISOString()
+          : '(aucune)';
+
+        out.textContent =
+          `Date (input type="date") : ${isoDate}\n` +
+          `Date+Heure (input type="datetime-local") : ${isoDateTime}`;
+      });
+
+      // Bouton : assigner les 2 champs à partir de Date.now()
+      btnNow.addEventListener('click', () => {
+        const now = new Date();
+
+        // Champ date (YYYY-MM-DD)
+        dateInput.value = now.toISOString().slice(0, 10);
+
+        // Champ datetime-local (YYYY-MM-DDTHH:mm)
+        const local = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
+          .toISOString()
+          .slice(0, 16);
+        dateTimeInput.value = local;
+
+        out.textContent =
+          'Les deux champs ont été remplis avec la date actuelle.';
+      });
+    </script>
+  </body>
+</html>

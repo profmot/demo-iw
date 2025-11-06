@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <title>Formatage avec Intl.DateTimeFormat</title>
+  </head>
+  <body>
+    <h1>Formatage avec Intl.DateTimeFormat</h1>
+
+    <label for="date">Date :</label>
+    <input id="date" name="date" type="date" />
+
+    <label for="locale">Locale :</label>
+    <select id="locale" name="locale">
+      <option value="">(navigator.language)</option>
+      <option value="fr-CA">fr-CA</option>
+      <option value="fr-FR">fr-FR</option>
+      <option value="en-CA">en-CA</option>
+      <option value="en-US">en-US</option>
+    </select>
+
+    <label for="style">Style :</label>
+    <select id="style" name="style">
+      <option value="short">short</option>
+      <option value="medium">medium</option>
+      <option value="long" selected>long</option>
+      <option value="full">full</option>
+    </select>
+
+    <p id="out">Choisissez une date.</p>
+
+    <script>
+      const input = document.getElementById('date');
+      const localeSel = document.getElementById('locale');
+      const styleSel = document.getElementById('style');
+      const out = document.getElementById('out');
+
+      function render() {
+        if (!input.value) {
+          out.textContent = 'Choisissez une date.';
+          return;
+        }
+        const [y, m, d] = input.value.split('-').map(Number);
+        const date = new Date(y, m - 1, d);
+
+        const loc = localeSel.value || navigator.language;
+        const style = styleSel.value;
+
+        const fmt = new Intl.DateTimeFormat(loc, { dateStyle: style });
+        out.textContent = `(${loc}, ${style}) → ${fmt.format(date)}`;
+      }
+
+      input.addEventListener('change', render);
+      localeSel.addEventListener('change', render);
+      styleSel.addEventListener('change', render);
+    </script>
+  </body>
+</html>

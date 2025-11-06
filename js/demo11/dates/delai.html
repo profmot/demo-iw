@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <title>Délai entre deux clics</title>
+  </head>
+  <body>
+    <h1>Délai entre deux clics</h1>
+
+    <button id="btn" type="button">Cliquer (2 fois pour mesurer)</button>
+    <button id="reset" type="button">Réinitialiser</button>
+
+    <p id="etat">En attente du premier clic…</p>
+    <p id="resultat"></p>
+
+    <script>
+      const btn = document.getElementById('btn');
+      const reset = document.getElementById('reset');
+      const etat = document.getElementById('etat');
+      const res = document.getElementById('resultat');
+
+      let t1 = null;
+
+      btn.addEventListener('click', () => {
+        const t = Date.now(); //performance.now() est plus précis que Date.now()
+        if (t1 === null) {
+          t1 = t;
+          etat.textContent = 'Premier clic reçu. Cliquez à nouveau…';
+          res.textContent = '';
+        } else {
+          const deltaMs = t - t1;
+          const sec = (deltaMs / 1000).toFixed(3);
+          res.textContent = `Délai: ${deltaMs.toFixed(
+            1
+          )} ms (environs ${sec} s)`;
+          etat.textContent =
+            'Mesure terminée. Cliquez « Réinitialiser » pour recommencer.';
+          t1 = null;
+        }
+      });
+
+      reset.addEventListener('click', () => {
+        t1 = null;
+        etat.textContent = 'En attente du premier clic…';
+        res.textContent = '';
+      });
+    </script>
+  </body>
+</html>
