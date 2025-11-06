@@ -28,6 +28,7 @@
         font-size: 1rem;
       }
     </style>
+    <script src="./src/app.js" type="module"></script>
   </head>
   <body>
     <form id="formulaire" action="#">
@@ -47,36 +48,4 @@
     </form>
     <div id="message"></div>
   </body>
-  <script>
-    class Utilisateur {
-      constructor({ email, password, remember }) {
-        this.email = String(email).trim().toLowerCase();
-        this.password = String(password);
-        this.remember = Boolean(remember);
-      }
-      valider() {
-        if (!this.email.includes('@')) throw new Error('Courriel invalide');
-        if (this.password.length < 8)
-          throw new Error('Mot de passe trop court');
-      }
-    }
-    const form = document.getElementById('formulaire');
-    const msg = document.getElementById('message');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (!form.checkValidity()) return;
-
-      const raw = Object.fromEntries(new FormData(form));
-      const user = new Utilisateur(raw);
-
-      try {
-        user.valider();
-        localStorage.setItem('user', JSON.stringify(user));
-
-        msg.innerText = 'Utilisateur enregistré avec succès.';
-      } catch (err) {
-        msg.innerText = `Erreur: ${err.message}`;
-      }
-    });
-  </script>
 </html>

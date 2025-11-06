@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulaire dynamique simple</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Formulaire dynamique</h1>
+
+    <form id="formProfil">
+      <label for="nom">Nom complet :</label>
+      <input type="text" id="nom" name="nom" required />
+
+      <label for="typeSelect">Type de profil :</label>
+      <select id="typeSelect" name="type" required>
+        <option value="">-- Choisir --</option>
+        <option value="etudiant">Étudiant</option>
+        <option value="entreprise">Entreprise</option>
+        <option value="autre">Autre</option>
+      </select>
+
+      <div id="zoneEntreprise" class="hidden">
+        <label for="nomEntreprise">Nom de l’entreprise :</label>
+        <input type="text" id="nomEntreprise" name="entreprise" />
+      </div>
+
+      <p id="valeurChoisie">Aucune sélection</p>
+
+      <button type="submit">Envoyer</button>
+    </form>
+
+    <script>
+      const form = document.getElementById('formProfil');
+      const typeSelect = document.getElementById('typeSelect');
+      const zoneEntreprise = document.getElementById('zoneEntreprise');
+      const valeurChoisie = document.getElementById('valeurChoisie');
+
+      // Affichage dynamique selon le type choisi
+      typeSelect.addEventListener('change', () => {
+        zoneEntreprise.classList.toggle(
+          'hidden',
+          typeSelect.value !== 'entreprise'
+        );
+        valeurChoisie.textContent = typeSelect.value
+          ? `Type sélectionné : ${typeSelect.value}`
+          : 'Aucune sélection';
+      });
+
+      // Gestion du submit
+      form.addEventListener('submit', (e) => {
+        e.preventDefault(); // empêche l’envoi réel
+        const data = new FormData(form);
+        const nom = data.get('nom');
+        const type = data.get('type');
+        const entreprise = data.get('entreprise');
+
+        let message = '';
+
+        switch (type) {
+          case 'etudiant':
+            message = `Profil étudiant\nNom : ${nom}`;
+            break;
+          case 'entreprise':
+            message = `Profil entreprise\nNom : ${nom}\nEntreprise : ${
+              entreprise || '(non précisé)'
+            }`;
+            break;
+          case 'autre':
+            message = `Profil autre\nNom : ${nom}`;
+            break;
+          default:
+            message = 'Veuillez choisir un type de profil.';
+        }
+
+        alert(message);
+      });
+    </script>
+  </body>
+</html>
