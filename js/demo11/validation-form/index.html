@@ -62,7 +62,6 @@
         const fd = new FormData(form);
         const data = Object.fromEntries(fd.entries()); // perd les doublons
         console.log('avant', data);
-        data.tags = fd.getAll('tags');
         data.tags = fd.getAll('tags'); // ["js","css"] si plusieurs cochés
         data.prefs = fd.getAll('prefs'); // valeurs sélectionnées
         console.log('apres', data);

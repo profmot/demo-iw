@@ -12,15 +12,17 @@
       id="codePostal"
       placeholder="A1A 1A1"
     />
+    <input type="text" name="deuxieme" id="deuxieme" placeholder="A1A 1A1" />
 
     <script>
+      const deuxieme = document.getElementById('deuxieme');
       const champ = document.getElementById('codePostal');
 
       champ.addEventListener('input', () => {
-        champ.setCustomValidity('e');
+        deuxieme.setCustomValidity('ffffff');
         console.log(champ.validity);
 
-        champ.reportValidity();
+        deuxieme.reportValidity();
       });
     </script>
   </body>

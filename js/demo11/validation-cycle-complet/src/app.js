@@ -6,8 +6,9 @@ form.addEventListener('submit', (e) => {
   if (!form.checkValidity()) return;
 
   const raw = Object.fromEntries(new FormData(form));
+  console.log('Données brutes:', raw);
   const user = new Utilisateur(raw);
-
+  console.log('Utilisateur créé:', user);
   try {
     user.valider();
     localStorage.setItem('user', JSON.stringify(user));
