@@ -14,7 +14,7 @@ let last = performance.now();
 
 function update(ts) {
   if (!paused) {
-    const dt = (ts - last) / 1000; // secondes depuis le dernier affichage
+    const dt = (ts - last) / 1000; // delta temps = secondes depuis le dernier affichage
     x += vx * dt;
     y += vy * dt;
 
