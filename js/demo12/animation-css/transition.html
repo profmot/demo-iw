@@ -31,17 +31,18 @@
         border-radius: 0.8rem;
         /* État initial */
         opacity: 0;
-        transform: translateY(12px);
+        transform: translateY(100px);
         /* Transition : on précise quoi, durée, easing, délais (0 ici) */
-        transition-property: opacity, transform;
-        transition-duration: 300ms, 300ms;
-        transition-timing-function: ease-out, ease-out;
-        transition-delay: 0ms, 0ms;
+        transition-property: opacity, transform, color;
+        transition-duration: 300ms, 3000ms, 3000ms;
+        transition-timing-function: ease-out, ease-out, ease-out;
+        transition-delay: 0ms, 0ms, 0ms;
       }
       /* État final (quand la classe est ajoutée) */
       .panel.is-open {
         opacity: 1;
         transform: translateY(0);
+        color: red;
       }
 
       /* Respect des préférences d’accessibilité */
