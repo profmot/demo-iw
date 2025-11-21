@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JavaScript-Débogage</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(to top left, #55691e, #b4c70b);
+      }
+      h1 {
+        font-family: sans-serif;
+        font-size: 50px;
+        line-height: 1.3;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        color: white;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      .hide {
+        display: none;
+      }
+      .row {
+        display: flex;
+      }
+      img {
+        width: 300px;
+        height: 200px;
+        float: left;
+      }
+      .column {
+        flex: 33.33%;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="hide">Audio</h1>
+    <object
+      class="hide"
+      data="./audio/music1.mp3"
+      title="music1"
+      type="audio/mp3"
+      standby="music1"
+    >
+      <h1>Objet Audio non affiche</h1>
+    </object>
+    <h1 class="hide">Video</h1>
+    <object
+      class="hide"
+      data="./video/video.mp4"
+      title="jacs"
+      type="video/mp4"
+      width="420"
+      height="400"
+      standby="Vidéo mp4"
+    >
+      <h1>Objet vidéo non affiche</h1>
+    </object>
+    <audio controls="controls" class="hide">
+      <source src="./audio/music1.ogg" type="audio/ogg" />
+      <source src="./audio/music1.mp3" type="audio/mpeg" />
+      Your browser does not support the audio tag.
+    </audio>
+    <div class="row">
+      <div class="column">
+        <img id="kitten3" src="./images/cat.jpg" alt="Cat" />
+      </div>
+      <div class="column">
+        <img id="bark" src="./images/dog.jpg" alt="Dog" />
+      </div>
+      <div class="column">
+        <img id="pig" src="./images/pig.jpg" alt="Pig" />
+      </div>
+      <audio id="audio">
+        <source src="./audio/bark.wav" type="audio/wav" />
+        <source src="./audio/bark.mp3" type="audio/mp3" />
+        Your browser does not support the audio tag.
+      </audio>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
