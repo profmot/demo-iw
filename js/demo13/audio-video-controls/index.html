@@ -42,6 +42,15 @@
         flex: 33.33%;
         padding: 5px;
       }
+      .video-container {
+        margin-top: 20px;
+        width: 420px;
+        height: 400px;
+      }
+      video {
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
@@ -87,6 +96,9 @@
         <source src="./audio/bark.mp3" type="audio/mp3" />
         Your browser does not support the audio tag.
       </audio>
+    </div>
+    <div class="video-container">
+      <video controls autoplay src="./video/video.mp4"></video>
     </div>
     <script src="script.js"></script>
   </body>

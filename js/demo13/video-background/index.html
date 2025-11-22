@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fond vidéo avec teinte</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        color: white;
+        font-family: system-ui, sans-serif;
+        text-align: center;
+      }
+
+      .bg-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -3;
+      }
+
+      /* Overlay plus foncé (pour la lisibilité) */
+      .overlay-dark {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: -2;
+      }
+
+      /* Overlay de couleur : MODIFIER LA TEINTE ICI */
+      .overlay-tint {
+        position: absolute;
+        inset: 0;
+        background: rgba(129, 0, 8, 0.25); /* bleu-violet */
+        mix-blend-mode: overlay; /* optionnel : rend la teinte plus naturelle */
+        z-index: -1;
+      }
+
+      .carte {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 1rem;
+        padding: 2.5rem 3rem;
+        backdrop-filter: blur(10px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="hero">
+      <video class="bg-video" autoplay muted loop playsinline>
+        <source src="assets/video.mp4" type="video/mp4" />
+      </video>
+
+      <div class="overlay-dark"></div>
+      <div class="overlay-tint"></div>
+
+      <div class="carte">
+        <h1>Landing Page</h1>
+        <p>Fond vidéo avec teinte personnalisée.</p>
+      </div>
+    </div>
+  </body>
+</html>
