@@ -54,33 +54,6 @@
     </style>
   </head>
   <body>
-    <h1 class="hide">Audio</h1>
-    <object
-      class="hide"
-      data="./audio/music1.mp3"
-      title="music1"
-      type="audio/mp3"
-      standby="music1"
-    >
-      <h1>Objet Audio non affiche</h1>
-    </object>
-    <h1 class="hide">Video</h1>
-    <object
-      class="hide"
-      data="./video/video.mp4"
-      title="jacs"
-      type="video/mp4"
-      width="420"
-      height="400"
-      standby="Vidéo mp4"
-    >
-      <h1>Objet vidéo non affiche</h1>
-    </object>
-    <audio controls="controls" class="hide">
-      <source src="./audio/music1.ogg" type="audio/ogg" />
-      <source src="./audio/music1.mp3" type="audio/mpeg" />
-      Your browser does not support the audio tag.
-    </audio>
     <div class="row">
       <div class="column">
         <img id="kitten3" src="./images/cat.jpg" alt="Cat" />
@@ -94,12 +67,33 @@
       <audio id="audio">
         <source src="./audio/bark.wav" type="audio/wav" />
         <source src="./audio/bark.mp3" type="audio/mp3" />
-        Your browser does not support the audio tag.
+        le navigateur ne supporte pas audio.
       </audio>
     </div>
     <div class="video-container">
-      <video controls autoplay src="./video/video.mp4"></video>
+      <video muted controls autoplay src="./video/video.mp4"></video>
     </div>
-    <script src="script.js"></script>
   </body>
+
+  <script>
+    let audio = document.querySelector('audio');
+    let sources = document.querySelectorAll('source');
+
+    window.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (e.target.tagName === 'IMG') {
+        sources.forEach(function (element) {
+          if (element.getAttribute('type').includes('mp3')) {
+            element.src = `./audio/${e.target.getAttribute('id')}.mp3`;
+          } else {
+            element.src = `./audio/${e.target.getAttribute('id')}.wav`;
+          }
+        });
+        if (audio.paused) {
+          audio.load();
+          audio.play();
+        } else audio.pause();
+      }
+    });
+  </script>
 </html>
