@@ -19,7 +19,12 @@ async function chargerProduits() {
   }
 }
 
-chargerProduits();
+async function appelCharger() {
+  await chargerProduits();
+  console.log('Après chargerProduits dans appelCharger');
+}
+
+appelCharger();
 console.log('Après chargerProduits');
 
 console.log('Après chargerProduits');

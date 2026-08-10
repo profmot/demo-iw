@@ -63,7 +63,7 @@
         const data = Object.fromEntries(fd.entries()); // perd les doublons
         console.log('avant', data);
         data.tags = fd.getAll('tags'); // ["js","css"] si plusieurs cochés
-        data.prefs = fd.getAll('prefs'); // valeurs sélectionnées
+        data.prefs = fd.getAll('prefs'); // valeurs sélectio*nnées
         console.log('apres', data);
       });
     </script>
