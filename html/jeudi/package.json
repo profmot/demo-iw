@@ -1,0 +1,10 @@
+{
+  "name": "mon-projet-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "servor"
+  },
+  "devDependencies": {
+    "servor": "^4.0.2"
+  }
+}
