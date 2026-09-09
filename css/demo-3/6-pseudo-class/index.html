@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      button {
+        background-color: #2563eb;
+        transition:
+          background-color 0.2s,
+          transform 0.2s;
+      }
+
+      button:hover,
+      button:focus {
+        background-color: #1e40af;
+        outline: 3px solid red;
+        transform: translateY(-2px);
+      }
+
+      input:focus {
+        border-color: #2563eb;
+        outline: 3px solid #bfdbfe;
+      }
+
+      #accord:checked + label {
+        color: #047857;
+        font-weight: 700;
+      }
+    </style>
+
+    <button type="button">Survolez-moi</button>
+
+    <p>
+      <input id="accord" type="checkbox" />
+      <label for="accord">Option sélectionnée</label>
+    </p>
+
+    <label for="nom">Nom</label>
+    <input id="nom" type="text" placeholder="Cliquez dans le champ" />
+  </body>
+</html>

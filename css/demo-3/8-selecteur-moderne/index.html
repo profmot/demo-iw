@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .selecteurs-demo {
+        display: grid;
+        gap: 1rem;
+        color: #17212f;
+        font-family: system-ui, sans-serif;
+      }
+
+      .selecteurs-demo :is(h2, h3) {
+        margin: 0;
+        color: #003b7a;
+      }
+
+      .selecteurs-demo input[type='email'] {
+        width: min(100%, 22rem);
+        padding: 0.65rem;
+        border: 2px solid #19a833;
+        border-radius: 0.4rem;
+      }
+
+      .selecteurs-demo .carte {
+        padding: 1rem;
+        border: 2px solid #9fbdd2;
+        border-radius: 0.75rem;
+        background: #f8fcff;
+        transition: 180ms ease;
+      }
+
+      .selecteurs-demo .carte:has(input:checked) {
+        border-color: #19a833;
+        background: #eaf8ed;
+        box-shadow: 0 0 0 4px rgb(25 168 51 / 15%);
+      }
+
+      .selecteurs-demo .citation::before {
+        content: '❝ ';
+        color: #19a833;
+        font-size: 1.5em;
+      }
+
+      .selecteurs-demo .citation::after {
+        content: ' ❞';
+        color: #19a833;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="selecteurs-demo">
+      <h2>Sélecteurs modernes</h2>
+      <label>
+        Courriel
+        <input type="email" placeholder="nom@exemple.com" />
+      </label>
+
+      <article class="carte">
+        <h3>Carte sélectionnable</h3>
+        <label><input type="checkbox" /> Activer la carte</label>
+        <p>
+          Le sélecteur <code>:has()</code> modifie le parent lorsque la case est
+          cochée.
+        </p>
+      </article>
+
+      <p class="citation">Le CSS décrit la présentation du document.</p>
+    </section>
+  </body>
+</html>
