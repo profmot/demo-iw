@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      * {
+        color: #19a833 !important;
+      }
       .selecteurs-demo {
         display: grid;
         gap: 1rem;
@@ -12,7 +15,7 @@
         font-family: system-ui, sans-serif;
       }
 
-      .selecteurs-demo :is(h2, h3) {
+      .selecteurs-demo :is(h1, h2, h3) {
         margin: 0;
         color: #003b7a;
       }
@@ -33,21 +36,7 @@
       }
 
       .selecteurs-demo .carte:has(input:checked) {
-        border-color: #19a833;
-        background: #eaf8ed;
-        box-shadow: 0 0 0 4px rgb(25 168 51 / 15%);
-      }
-
-      .selecteurs-demo .citation::before {
-        content: '❝ ';
-        color: #19a833;
-        font-size: 1.5em;
-      }
-
-      .selecteurs-demo .citation::after {
-        content: ' ❞';
-        color: #19a833;
-        font-size: 1.5em;
+        background-color: chartreuse;
       }
     </style>
   </head>
@@ -57,6 +46,11 @@
       <label>
         Courriel
         <input type="email" placeholder="nom@exemple.com" />
+      </label>
+
+      <label>
+        nom
+        <input type="text" placeholder="nom" />
       </label>
 
       <article class="carte">
