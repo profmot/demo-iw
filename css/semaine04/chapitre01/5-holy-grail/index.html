@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>5 - Holy Grail Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font:
+        18px Arial,
+        sans-serif;
+    }
+    header,
+    footer {
+      background: #003b7a;
+      color: white;
+      padding: 20px;
+    }
+    .centre {
+      display: flex;
+      flex: 1;
+      gap: 10px;
+      padding: 10px;
+    }
+    nav,
+    aside {
+      flex: 0 0 180px;
+      background: #c8e6f5;
+      padding: 20px;
+    }
+    main {
+      flex: 1;
+      min-width: 0;
+      background: #eef7fc;
+      padding: 20px;
+    }
+    @media (max-width: 650px) {
+      .centre {
+        flex-direction: column;
+      }
+      nav,
+      aside {
+        flex-basis: auto;
+      }
+    }
+  </style>
+  <header>En-tête</header>
+  <div class="centre">
+    <nav>Navigation</nav>
+    <main>
+      <h1>Holy Grail Layout</h1>
+      <p>
+        Le centre grandit pour pousser le pied de page en bas quand le contenu
+        est court. Ajoutez du texte ici pour voir la page s'allonger.
+      </p>
+    </main>
+    <aside>Complément</aside>
+  </div>
+  <footer>Pied de page</footer>
+</html>

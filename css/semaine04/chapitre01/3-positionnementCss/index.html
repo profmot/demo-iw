@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>3 - Positionnement CSS</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+      min-height: 1500px;
+    }
+    .carte {
+      position: relative;
+      width: 300px;
+      min-height: 150px;
+      background: #c8e6f5;
+      padding: 20px;
+      border: 2px solid #003b7a;
+    }
+    .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #19a833;
+      color: white;
+      border-radius: 16px;
+      padding: 6px;
+    }
+    .decale {
+      position: relative;
+      left: 30px;
+      top: 15px;
+      background: #b9efc2;
+    }
+    .fixe {
+      position: fixed;
+      bottom: 12px;
+      right: 12px;
+      background: #003b7a;
+      color: white;
+      padding: 8px;
+    }
+    .collant {
+      position: sticky;
+      top: 0;
+      background: #f7dd8c;
+      padding: 8px;
+    }
+  </style>
+
+  <h1>static, relative, absolute, fixed, sticky</h1>
+
+  <div class="collant">sticky - colle au haut pendant le défilement</div>
+  <p>Un paragraphe normal avant l'élément décalé.</p>
+  <p class="decale">relative - sa place d'origine reste réservée</p>
+  <p>Un paragraphe normal après l'élément décalé.</p>
+
+  <div class="carte">
+    Parent positionné
+    <div class="badge">absolute</div>
+  </div>
+
+  <div class="fixe">fixed - reste à l'écran</div>
+</html>

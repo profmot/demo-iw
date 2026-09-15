@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>12 - Transformations</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .ligne {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 35px;
+      margin: 45px 0;
+    }
+    .carte {
+      width: 120px;
+      height: 90px;
+      background: #c8e6f5;
+      display: grid;
+      place-items: center;
+      border: 2px solid #003b7a;
+    }
+    .tournee {
+      transform: rotate(15deg);
+    }
+    .agrandie {
+      transform: scale(1.2);
+    }
+    .decalee {
+      transform: translateX(20px);
+    }
+    .inclinee {
+      transform: skew(12deg);
+    }
+  </style>
+  <h1>Transformations visuelles</h1>
+  <p>
+    Les transformations ne déplacent pas la place réservée dans le flux.
+    Désactivez une propriété pour comparer.
+  </p>
+  <div class="ligne">
+    <div class="carte tournee">rotate</div>
+    <div class="carte agrandie">scale</div>
+    <div class="carte decalee">translate</div>
+    <div class="carte inclinee">skew</div>
+  </div>
+</html>

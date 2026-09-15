@@ -11,7 +11,7 @@ produits.addEventListener('click', (event) => {
 
     // Crée un élément dans la liste
     const item = document.createElement('li');
-    item.textContent = `${nom} — $${prix}`;
+    item.textContent = `${nom} - $${prix}`;
 
     panier.appendChild(item);
 

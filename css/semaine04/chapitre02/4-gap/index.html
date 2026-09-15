@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>4 - Gap</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .grille {
+      display: grid;
+      grid-template-columns: repeat(3, 90px);
+      grid-template-rows: repeat(2, 70px);
+      row-gap: 25px;
+      column-gap: 10px;
+      width: max-content;
+      border: 2px solid #003b7a;
+      padding: 10px;
+    }
+    .item {
+      background: #c8e6f5;
+      display: grid;
+      place-items: center;
+    }
+  </style>
+  <h1>row-gap et column-gap</h1>
+  <p>
+    Les rangées sont séparées de 25 px; les colonnes, de 10 px. Remplacez les
+    deux propriétés par <code>gap: 25px 10px</code>.
+  </p>
+  <div class="grille">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+  </div>
+</html>

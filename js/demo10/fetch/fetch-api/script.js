@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for (const prod of produits) {
       const li = document.createElement('li');
-      li.textContent = `${prod.title} — ${prod.price}$ — ${prod.category}`;
+      li.textContent = `${prod.title} - ${prod.price}$ - ${prod.category}`;
       liste.appendChild(li);
     }
 

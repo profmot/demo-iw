@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>3 - Colonnes, rangées et fr</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .grille {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: 80px 120px;
+      gap: 10px;
+      border: 2px solid #003b7a;
+      padding: 10px;
+    }
+    .item {
+      background: #c8e6f5;
+      display: grid;
+      place-items: center;
+    }
+  </style>
+  <h1>Colonnes, rangées et fractions</h1>
+  <p>
+    Les colonnes reçoivent 1, 2 et 1 parts de l'espace disponible. Changez la
+    largeur de la fenêtre, puis essayez <code>200px 1fr 2fr</code>.
+  </p>
+  <div class="grille">
+    <div class="item">1fr</div>
+    <div class="item">2fr</div>
+    <div class="item">1fr</div>
+    <div class="item">1fr</div>
+    <div class="item">2fr</div>
+    <div class="item">1fr</div>
+  </div>
+</html>

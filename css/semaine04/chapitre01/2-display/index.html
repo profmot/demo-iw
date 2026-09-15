@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>2 - Display</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .boite {
+      background: #c8e6f5;
+      border: 2px solid #003b7a;
+      padding: 12px;
+      width: 150px;
+      margin: 8px;
+    }
+    .bloc {
+      display: block;
+    }
+    .en-ligne {
+      display: inline;
+    }
+    .mixte {
+      display: inline-block;
+    }
+    .cache {
+      display: none;
+    }
+  </style>
+
+  <h2>block</h2>
+  <span class="boite bloc">A</span>
+  <span class="boite bloc">B</span>
+
+  <h2>inline</h2>
+  <span class="boite en-ligne">A</span>
+  <span class="boite en-ligne">B</span>
+
+  <h2>inline-block</h2>
+  <span class="boite mixte">A</span>
+  <span class="boite mixte">B</span>
+
+  <h2>none</h2>
+  <p>
+    Avant <span class="cache">élément caché</span> après - aucun espace réservé.
+  </p>
+</html>

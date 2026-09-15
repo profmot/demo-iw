@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>11 - Media queries</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+      background: #eef7fc;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 10px;
+    }
+    .layout > * {
+      background: #c8e6f5;
+      padding: 20px;
+    }
+    @media (max-width: 650px) {
+      body {
+        background: #fff5e5;
+      }
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <h1>Media query à 650 px</h1>
+  <p>
+    Redimensionnez la fenêtre : sous 650 px, les colonnes deviennent une seule
+    colonne et le fond change. La condition mesure la fenêtre, pas la carte.
+  </p>
+  <div class="layout">
+    <main>Contenu principal</main>
+    <aside>Complément</aside>
+  </div>
+</html>

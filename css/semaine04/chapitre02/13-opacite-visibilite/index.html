@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>13 - Opacité et visibilité</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .ligne {
+      display: flex;
+      gap: 10px;
+      margin: 18px 0;
+    }
+    .carte {
+      width: 110px;
+      padding: 18px;
+      background: #c8e6f5;
+      border: 1px solid #003b7a;
+    }
+    .none {
+      display: none;
+    }
+    .hidden {
+      visibility: hidden;
+    }
+    .transparent {
+      opacity: 0;
+    }
+    .fond {
+      background: rgb(0 59 122 / 30%);
+    }
+  </style>
+  <h1>Trois façons de cacher</h1>
+  <p>
+    Observez l'espace réservé. Le bouton à <code>opacity: 0</code> est
+    invisible, mais peut encore recevoir le focus au clavier.
+  </p>
+  <h2>display: none</h2>
+  <div class="ligne">
+    <div class="carte">Avant</div>
+    <div class="carte none">Caché</div>
+    <div class="carte">Après</div>
+  </div>
+  <h2>visibility: hidden</h2>
+  <div class="ligne">
+    <div class="carte">Avant</div>
+    <div class="carte hidden">Caché</div>
+    <div class="carte">Après</div>
+  </div>
+  <h2>opacity: 0</h2>
+  <div class="ligne">
+    <div class="carte">Avant</div>
+    <button class="carte transparent">Invisible</button>
+    <div class="carte">Après</div>
+  </div>
+  <h2>Fond transparent sans rendre le texte transparent</h2>
+  <div class="carte fond">Texte visible</div>
+</html>

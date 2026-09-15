@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>2 - Activer Grid</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .sans,
+    .avec {
+      border: 2px solid #003b7a;
+      padding: 12px;
+      margin: 12px 0;
+    }
+    .avec {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .carte {
+      background: #c8e6f5;
+      padding: 20px;
+    }
+  </style>
+  <h1>Activer CSS Grid sur le parent</h1>
+  <p>
+    Supprimez <code>display: grid</code> de la deuxième boîte. Les enfants
+    directs ne sont alors plus des grid items.
+  </p>
+  <h2>Flux normal</h2>
+  <div class="sans">
+    <div class="carte">1</div>
+    <div class="carte">2</div>
+    <div class="carte">3</div>
+  </div>
+  <h2>Grid</h2>
+  <div class="avec">
+    <div class="carte">1</div>
+    <div class="carte">2</div>
+    <div class="carte">3</div>
+  </div>
+</html>

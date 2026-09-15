@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>1 - Flux normal</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      max-width: 850px;
+      margin: 40px auto;
+    }
+    .cadre {
+      border: 2px solid #003b7a;
+      padding: 20px;
+    }
+    .bloc {
+      background: #c8e6f5;
+      margin: 10px 0;
+      padding: 12px;
+    }
+    .ligne {
+      background: #b9efc2;
+      padding: 3px;
+    }
+  </style>
+  <h1>Flux normal : bloc et en ligne</h1>
+  <p>
+    Changez les marges et le padding, puis observez où vont les éléments
+    suivants.
+  </p>
+  <div class="cadre">
+    <div class="bloc">Bloc 1 - nouvelle ligne</div>
+    <div class="bloc">Bloc 2 - nouvelle ligne</div>
+    <p>
+      Dans ce paragraphe,
+      <span class="ligne">un span reste dans le texte</span> et
+      <a class="ligne" href="#">un lien aussi</a>, même quand la phrase devient
+      assez longue pour revenir à la ligne.
+    </p>
+  </div>
+</html>

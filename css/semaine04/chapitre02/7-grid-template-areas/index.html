@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>7 - Grid-template-areas</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      grid-template-areas: 'header header' 'main aside' 'footer footer';
+      gap: 10px;
+    }
+    .layout > * {
+      background: #c8e6f5;
+      padding: 20px;
+    }
+    .header {
+      grid-area: header;
+    }
+    .main {
+      grid-area: main;
+      min-height: 130px;
+    }
+    .aside {
+      grid-area: aside;
+    }
+    .footer {
+      grid-area: footer;
+    }
+    @media (max-width: 650px) {
+      .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'header' 'main' 'aside' 'footer';
+      }
+    }
+  </style>
+  <h1>Zones nommées</h1>
+  <p>
+    Les mots sont des noms de zones CSS, pas des balises.
+    <code>"header header"</code> étend une seule zone sur deux colonnes. Chaque
+    classe associe son élément avec <code>grid-area</code>.
+  </p>
+  <div class="layout">
+    <header class="header">header</header>
+    <main class="main">main</main>
+    <aside class="aside">aside</aside>
+    <footer class="footer">footer</footer>
+  </div>
+</html>

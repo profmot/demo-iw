@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>4 - Z-index</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .scene {
+      position: relative;
+      height: 230px;
+      border: 2px solid #003b7a;
+    }
+    .boite {
+      position: absolute;
+      width: 180px;
+      height: 130px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: bold;
+    }
+    .bleue {
+      left: 35px;
+      top: 30px;
+      background: #003b7a;
+      z-index: 1;
+    }
+    .verte {
+      left: 125px;
+      top: 80px;
+      background: #19a833;
+      z-index: 2;
+    }
+    .parent-bas,
+    .parent-haut {
+      position: absolute;
+      inset: 0;
+    }
+    .parent-bas {
+      z-index: 1;
+    }
+    .parent-haut {
+      z-index: 2;
+    }
+    .parent-bas .boite {
+      left: 35px;
+      top: 30px;
+      background: #19a833;
+      z-index: 9999;
+    }
+    .parent-haut .boite {
+      left: 125px;
+      top: 80px;
+      background: #003b7a;
+      z-index: 1;
+    }
+  </style>
+  <h1>z-index</h1>
+  <div class="scene">
+    <div class="boite bleue">z-index: 1</div>
+    <div class="boite verte">z-index: 2</div>
+  </div>
+  <h2>Contextes d'empilement</h2>
+  <div class="scene">
+    <div class="parent-bas"><div class="boite">enfant : 9999</div></div>
+    <div class="parent-haut"><div class="boite">enfant : 1</div></div>
+  </div>
+</html>

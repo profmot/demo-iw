@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>5 - Aligner dans une grille</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .grille {
+      display: grid;
+      grid-template-columns: repeat(2, 120px);
+      grid-template-rows: repeat(2, 100px);
+      width: 350px;
+      height: 320px;
+      gap: 10px;
+      border: 2px solid #003b7a;
+      padding: 10px;
+      background: #eef7fc;
+      justify-content: center;
+      align-content: center;
+      justify-items: end;
+      align-items: end;
+    }
+    .item {
+      width: 70px;
+      height: 45px;
+      background: #c8e6f5;
+      display: grid;
+      place-items: center;
+    }
+    .item.special {
+      justify-self: start;
+      align-self: start;
+      background: #19a833;
+      color: white;
+    }
+  </style>
+  <h1>items, content et self</h1>
+  <p>
+    <code>*-content</code> centre toute la grille, <code>*-items</code> pousse
+    tous les petits items en bas à droite de leur cellule, et
+    <code>*-self</code> fait exception pour A.
+  </p>
+  <div class="grille">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item special">A</div>
+  </div>
+</html>

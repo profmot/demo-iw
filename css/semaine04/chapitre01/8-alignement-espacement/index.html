@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>8 - Alignement Flexbox</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .conteneur {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      min-height: 180px;
+      border: 2px solid #003b7a;
+      padding: 12px;
+    }
+    .item {
+      background: #c8e6f5;
+      padding: 15px;
+    }
+    .haut {
+      height: 80px;
+    }
+  </style>
+  <h1>justify-content, align-items et gap</h1>
+  <p>
+    Modifiez les trois propriétés de <code>.conteneur</code>. Essayez
+    <code>center</code>, <code>flex-end</code>, <code>stretch</code> et
+    <code>space-evenly</code>.
+  </p>
+  <div class="conteneur">
+    <div class="item">Petit</div>
+    <div class="item haut">Plus haut</div>
+    <div class="item">Petit</div>
+  </div>
+  <p>
+    <code>justify-content</code> suit l'axe principal;
+    <code>align-items</code> suit l'axe secondaire.
+  </p>
+</html>

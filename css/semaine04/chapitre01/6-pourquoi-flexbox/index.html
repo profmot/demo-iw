@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>6 - Pourquoi Flexbox?</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .normal,
+    .flex {
+      border: 2px solid #003b7a;
+      padding: 12px;
+      margin-bottom: 20px;
+    }
+    .flex {
+      display: flex;
+      gap: 12px;
+    }
+    .carte {
+      padding: 20px;
+      background: #c8e6f5;
+    }
+    .normal .carte {
+      margin-bottom: 10px;
+    }
+  </style>
+  <h1>Du flux normal à Flexbox</h1>
+  <p>
+    Le CSS de la seconde boîte applique <code>display: flex</code> au parent.
+    Seuls ses enfants directs deviennent flex items.
+  </p>
+  <h2>Sans flex</h2>
+  <div class="normal">
+    <div class="carte">Carte 1</div>
+    <div class="carte">Carte 2</div>
+    <div class="carte">Carte 3</div>
+  </div>
+  <h2>Avec flex</h2>
+  <div class="flex">
+    <div class="carte">Carte 1</div>
+    <div class="carte">Carte 2</div>
+    <div class="carte">Carte 3</div>
+  </div>
+</html>
