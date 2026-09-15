@@ -29,15 +29,18 @@
       background: #b9efc2;
     }
   </style>
-  <h1>flex-grow, flex-shrink, flex-basis, align-self et order</h1>
-  <p>
-    Redimensionnez la fenêtre. <code>140px</code> est une base, pas une taille
-    finale. Modifiez <code>order</code> et observez que l'ordre HTML reste
-    inchangé.
-  </p>
-  <div class="conteneur">
-    <div class="item">A - premier dans le HTML</div>
-    <div class="item special">B - grow: 2, self: end, order: -1</div>
-    <div class="item">C - dernier dans le HTML</div>
-  </div>
+
+  <body>
+    <h1>flex-grow, flex-shrink, flex-basis, align-self et order</h1>
+    <p>
+      Redimensionnez la fenêtre. <code>140px</code> est une base, pas une taille
+      finale. Modifiez <code>order</code> et observez que l'ordre HTML reste
+      inchangé.
+    </p>
+    <div class="conteneur">
+      <div class="item">A - premier dans le HTML</div>
+      <div class="item special">B - grow: 2, self: end, order: -1</div>
+      <div class="item">C - dernier dans le HTML</div>
+    </div>
+  </body>
 </html>
