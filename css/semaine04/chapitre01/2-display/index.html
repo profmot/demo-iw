@@ -13,6 +13,7 @@
       border: 2px solid #003b7a;
       padding: 12px;
       width: 150px;
+      height: 50px;
       margin: 8px;
     }
     .bloc {
@@ -31,16 +32,18 @@
 
   <body>
     <h2>block</h2>
-    <span class="boite bloc">A</span>
-    <span class="boite bloc">B</span>
+    <div class="boite bloc">A</div>
+    avant<span class="boite bloc">B</span>apres
 
     <h2>inline</h2>
-    <span class="boite en-ligne">A</span>
+    <div class="boite en-ligne">A</div>
     <span class="boite en-ligne">B</span>
 
     <h2>inline-block</h2>
-    <span class="boite mixte">A</span>
-    <span class="boite mixte">B</span>
+    <div class="boite mixte">A</div>
+    <span class="boite mixte" style="display: none">B</span>
+    <div class="boite mixte">C</div>
+    <span class="boite mixte">D</span>
 
     <h2>none</h2>
     <p>

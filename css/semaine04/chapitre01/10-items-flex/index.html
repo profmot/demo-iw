@@ -12,21 +12,28 @@
       display: flex;
       gap: 12px;
       min-height: 180px;
-      width: 600px;
+      width: 800px;
       max-width: 100%;
       border: 2px solid #003b7a;
       padding: 12px;
     }
+    .item.b {
+    }
+
     .item {
-      flex: 1 1 140px;
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: 140px;
+
       background: #c8e6f5;
       padding: 12px;
     }
     .special {
-      flex-grow: 2;
-      align-self: flex-end;
-      order: -1;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 140px;
       background: #b9efc2;
+      padding: 12px;
     }
   </style>
 
@@ -39,8 +46,8 @@
     </p>
     <div class="conteneur">
       <div class="item">A - premier dans le HTML</div>
-      <div class="item special">B - grow: 2, self: end, order: -1</div>
-      <div class="item">C - dernier dans le HTML</div>
+      <div class="special">B - grow: 2, self: end, order: -1</div>
+      <div class="item b">C - dernier dans le HTML</div>
     </div>
   </body>
 </html>

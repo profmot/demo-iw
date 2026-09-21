@@ -13,6 +13,9 @@
       height: 230px;
       border: 2px solid #003b7a;
     }
+    .boite:hover {
+      z-index: 9999;
+    }
     .boite {
       position: absolute;
       width: 180px;
@@ -40,10 +43,10 @@
       inset: 0;
     }
     .parent-bas {
-      z-index: 1;
+      z-index: 50;
     }
     .parent-haut {
-      z-index: 2;
+      z-index: 1;
     }
     .parent-bas .boite {
       left: 35px;
@@ -67,8 +70,12 @@
     </div>
     <h2>Contextes d'empilement</h2>
     <div class="scene">
-      <div class="parent-bas"><div class="boite">enfant : 9999</div></div>
-      <div class="parent-haut"><div class="boite">enfant : 1</div></div>
+      <div class="parent-bas">
+        <div class="boite">enfant : 9999</div>
+      </div>
+      <div class="parent-haut">
+        <div class="boite">enfant : 1</div>
+      </div>
     </div>
   </body>
 </html>

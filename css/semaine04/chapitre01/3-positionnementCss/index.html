@@ -27,9 +27,10 @@
       padding: 6px;
     }
     .decale {
-      position: relative;
-      left: 30px;
+      position: absolute;
+      left: 10px;
       top: 15px;
+
       background: #b9efc2;
     }
     .fixe {
@@ -42,7 +43,7 @@
     }
     .collant {
       position: sticky;
-      top: 0;
+      top: 50px;
       background: #f7dd8c;
       padding: 8px;
     }
@@ -51,7 +52,6 @@
   <body>
     <h1>static, relative, absolute, fixed, sticky</h1>
 
-    <div class="collant">sticky - colle au haut pendant le défilement</div>
     <p>Un paragraphe normal avant l'élément décalé.</p>
     <p class="decale">relative - sa place d'origine reste réservée</p>
     <p>Un paragraphe normal après l'élément décalé.</p>
@@ -59,8 +59,9 @@
     <div class="carte">
       Parent positionné
       <div class="badge">absolute</div>
+      <div class="fixe">fixed - reste à l'écran</div>
     </div>
 
-    <div class="fixe">fixed - reste à l'écran</div>
+    <div class="collant">sticky - colle au haut pendant le défilement</div>
   </body>
 </html>
