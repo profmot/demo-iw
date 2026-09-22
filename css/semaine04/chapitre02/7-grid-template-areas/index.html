@@ -10,9 +10,14 @@
     }
     .layout {
       display: grid;
-      grid-template-columns: 1fr 180px;
-      grid-template-areas: 'header header' 'main aside' 'footer footer';
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 80px 1fr 80px;
+      grid-template-areas:
+        'main main'
+        'header aside'
+        'footer footer';
       gap: 10px;
+      height: 500px;
     }
     .layout > * {
       background: #c8e6f5;
@@ -20,10 +25,10 @@
     }
     .header {
       grid-area: header;
+      background-color: pink;
     }
     .main {
       grid-area: main;
-      min-height: 130px;
     }
     .aside {
       grid-area: aside;
@@ -45,7 +50,7 @@
     classe associe son élément avec <code>grid-area</code>.
   </p>
   <div class="layout">
-    <header class="header">header</header>
+    <header class="header">entete</header>
     <main class="main">main</main>
     <aside class="aside">aside</aside>
     <footer class="footer">footer</footer>
