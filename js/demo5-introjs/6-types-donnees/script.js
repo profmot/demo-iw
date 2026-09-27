@@ -3,9 +3,12 @@ const valeurs = [
   { valeur: 42, precision: 'nombre' },
   { valeur: true, precision: 'booléen' },
   { valeur: undefined, precision: 'valeur non définie' },
-  { valeur: null, precision: 'absence volontaire; typeof est un cas historique' },
+  {
+    valeur: null,
+    precision: 'absence volontaire; typeof est un cas historique',
+  },
   { valeur: [1, 2, 3], precision: 'tableau reconnu avec Array.isArray()' },
-  { valeur: { nom: 'Alex' }, precision: 'objet' }
+  { valeur: { nom: 'Alex' }, precision: 'objet' },
 ];
 
 const corps = document.querySelector('#types');
@@ -18,4 +21,5 @@ for (const entree of valeurs) {
 }
 
 const nombre = Number('5');
-document.querySelector('#conversion').textContent = `Number("5") produit ${nombre}, de type ${typeof nombre}.`;
+document.querySelector('#conversion').textContent =
+  `Number("5") produit ${nombre}, de type ${typeof nombre}.`;

@@ -2,7 +2,9 @@ body {
   max-width: 760px;
   margin: 40px auto;
   padding: 0 20px;
-  font: 18px/1.5 Arial, sans-serif;
+  font:
+    18px/1.5 Arial,
+    sans-serif;
 }
 
 button {
