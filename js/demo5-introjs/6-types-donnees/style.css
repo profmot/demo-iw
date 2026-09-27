@@ -1,0 +1,22 @@
+body {
+  max-width: 860px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font: 18px/1.5 Arial, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #b8c9dc;
+  text-align: left;
+}
+
+th {
+  background: #e5f1fd;
+}

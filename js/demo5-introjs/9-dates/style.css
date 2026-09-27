@@ -1,0 +1,29 @@
+body {
+  max-width: 760px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font: 18px/1.5 Arial, sans-serif;
+}
+
+button {
+  padding: 10px 16px;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 18px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0;
+}
+
+#resultat {
+  padding: 18px;
+  background: #e5f1fd;
+}

@@ -1,0 +1,16 @@
+body {
+  max-width: 680px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font: 18px/1.5 Arial, sans-serif;
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #173f8a;
+}
+
+button {
+  padding: 10px 16px;
+}
