@@ -1,25 +1,30 @@
-const valeurs = [
-  { valeur: 'Bonjour', precision: 'chaîne de caractères' },
-  { valeur: 42, precision: 'nombre' },
-  { valeur: true, precision: 'booléen' },
-  { valeur: undefined, precision: 'valeur non définie' },
-  {
-    valeur: null,
-    precision: 'absence volontaire; typeof est un cas historique',
-  },
-  { valeur: [1, 2, 3], precision: 'tableau reconnu avec Array.isArray()' },
-  { valeur: { nom: 'Alex' }, precision: 'objet' },
-];
+console.log(typeof 'Bonjour'); // "string"
+console.log(typeof 42); // "number"
+console.log(typeof true); // "boolean"
+console.log(typeof { nom: 'Alice' }); // "object"
 
-const corps = document.querySelector('#types');
+let nom;
+console.log(nom); // undefined: aucune valeur attribuée
 
-for (const entree of valeurs) {
-  const ligne = document.createElement('tr');
-  const representation = JSON.stringify(entree.valeur) ?? String(entree.valeur);
-  ligne.innerHTML = `<td><code>${representation}</code></td><td><code>${typeof entree.valeur}</code></td><td>${entree.precision}</td>`;
-  corps.append(ligne);
-}
+let utilisateurSelectionne = null;
+console.log(utilisateurSelectionne); // null: absence volontaire
+// Attention aux conversions implicites:
 
-const nombre = Number('5');
-document.querySelector('#conversion').textContent =
-  `Number("5") produit ${nombre}, de type ${typeof nombre}.`;
+console.log('5' + 1); // "51"
+console.log('5' - 1); // 4
+console.log(5 == '5'); // true
+console.log(5 === '5'); // false
+
+const quantite = Number('5');
+const message = String(42);
+const estActif = Boolean(1);
+
+console.log(quantite); // 5
+console.log(message); // "42"
+console.log(estActif); // true
+
+// NaN
+const resultat = Number('bonjour');
+
+console.log(resultat); // NaN
+console.log(Number.isNaN(resultat)); // true
