@@ -16,7 +16,7 @@ document.querySelector('#erreur').addEventListener('click', function () {
 });
 
 document.querySelector('#pause').addEventListener('click', function () {
-  const message = 'Le débogueur peut examiner cette variable.';
+  const message = 'Partir le debugger';
   debugger;
   console.log(message);
 });
