@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      article p {
+        color: #4b5563;
+      }
+
+      ul > li {
+        font-weight: 700;
+      }
+
+      h2 + p {
+        border-left: 4px solid #2563eb;
+        padding-left: 0.75rem;
+      }
+      h2 ~ p {
+        color: #259912;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <h2>Article</h2>
+      <p>Ce paragraphe suit immédiatement le titre.</p>
+      <p>Ce paragraphe est aussi dans l'article.</p>
+      <p>Ce paragraphe est aussi dans l'article.</p>
+      <p>Ce paragraphe est aussi dans l'article.</p>
+      <p>Ce paragraphe est aussi dans l'article.</p>
+    </article>
+
+    <ul>
+      <li>Élément direct</li>
+      <li>
+        Élément direct
+        <ul>
+          <li>Sous-élément imbriqué</li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

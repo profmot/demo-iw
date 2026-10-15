@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --fond: #ffffff;
+        --texte: #1f2937;
+        --accent: #2563eb;
+      }
+
+      .theme {
+        padding: 1rem;
+        border: 2px solid var(--accent);
+        border-radius: 8px;
+        background-color: var(--fond);
+        color: var(--texte);
+      }
+
+      .theme.sombre {
+        --fond: #111827;
+        --texte: #f9fafb;
+        --accent: #93c5fd;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .theme.systeme {
+          --fond: #111827;
+          --texte: #f9fafb;
+          --accent: #93c5fd;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="theme">
+      <h2>Thème clair</h2>
+      <p>Les couleurs viennent de variables CSS.</p>
+    </section>
+
+    <section class="theme sombre">
+      <h2>Thème sombre</h2>
+      <p>Les mêmes propriétés utilisent d'autres valeurs.</p>
+    </section>
+
+    <section class="theme systeme">
+      <h2>Thème du système</h2>
+      <p>
+        Cette carte devient sombre si votre système préfère un thème sombre.
+      </p>
+    </section>
+  </body>
+</html>

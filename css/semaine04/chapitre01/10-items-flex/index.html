@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>10 - Contrôle individuel des items</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .conteneur {
+      display: flex;
+      gap: 12px;
+      min-height: 180px;
+      width: 800px;
+      max-width: 100%;
+      border: 2px solid #003b7a;
+      padding: 12px;
+    }
+    .item.b {
+    }
+
+    .item {
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: 140px;
+
+      background: #c8e6f5;
+      padding: 12px;
+    }
+    .special {
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 140px;
+      background: #b9efc2;
+      padding: 12px;
+    }
+  </style>
+
+  <body>
+    <h1>flex-grow, flex-shrink, flex-basis, align-self et order</h1>
+    <p>
+      Redimensionnez la fenêtre. <code>140px</code> est une base, pas une taille
+      finale. Modifiez <code>order</code> et observez que l'ordre HTML reste
+      inchangé.
+    </p>
+    <div class="conteneur">
+      <div class="item">A - premier dans le HTML</div>
+      <div class="special">B - grow: 2, self: end, order: -1</div>
+      <div class="item b">C - dernier dans le HTML</div>
+    </div>
+  </body>
+</html>

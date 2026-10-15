@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>9 - Masonry</title>
+  <style>
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .comparaison {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    section {
+      flex: 1 1 280px;
+    }
+    .grille {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .colonnes {
+      columns: 2;
+      column-gap: 10px;
+    }
+    .colonnes .carte {
+      break-inside: avoid;
+      margin-bottom: 10px;
+    }
+    .carte {
+      background: #c8e6f5;
+      padding: 15px;
+    }
+    .haute {
+      min-height: 130px;
+    }
+  </style>
+  <h1>Grille régulière ou effet Masonry?</h1>
+  <p>
+    CSS columns donne un effet compact, mais son ordre de lecture descend une
+    colonne avant de passer à la suivante.
+  </p>
+  <div class="comparaison">
+    <section>
+      <h2>Grid classique</h2>
+      <div class="grille">
+        <div class="carte haute">1 - haute</div>
+        <div class="carte">2</div>
+        <div class="carte">3</div>
+        <div class="carte haute">4 - haute</div>
+      </div>
+    </section>
+    <section>
+      <h2>CSS columns</h2>
+      <div class="colonnes">
+        <div class="carte haute">1 - haute</div>
+        <div class="carte">2</div>
+        <div class="carte">3</div>
+        <div class="carte haute">4 - haute</div>
+      </div>
+    </section>
+  </div>
+</html>

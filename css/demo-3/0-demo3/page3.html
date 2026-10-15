@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --couleur-principale: #140ca8;
+        --couleur-fond: #ffffff;
+        --padding-defaut: 16px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --couleur-principale: #140ca8;
+          --couleur-fond: #000000;
+        }
+      }
+
+      * {
+        background-color: var(--couleur-fond);
+      }
+      h1 {
+        color: var(--couleur-principale);
+      }
+      .special {
+        color: var(--couleur-principale);
+      }
+      p {
+        border: 1px solid var(--couleur-principale);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>titre</h1>
+
+    <div>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo
+        error optio fugit deserunt id repudiandae voluptate nam, magnam aut
+        suscipit maiores delectus ullam sequi hic quam odit in corrupti non?
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo
+        error optio fugit deserunt id repudiandae voluptate nam, magnam aut
+        suscipit maiores delectus ullam sequi hic quam odit in corrupti non?
+      </p>
+      <div class="special">Allo le special</div>
+    </div>
+  </body>
+</html>

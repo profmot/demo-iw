@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div.parent {
+        margin: 0;
+        width: 500px;
+        height: 550px;
+        border: 2px solid #000000;
+        padding: 0;
+      }
+      .petitpar {
+        border-width: 2px;
+        border-style: solid;
+        border-color: #000000;
+        height: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      div.paragraphe {
+        overflow: auto;
+        text-align: center;
+        margin: 0;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #000000;
+        border-top: 6px solid #5744bf;
+        border-radius: 16px;
+        padding: 16px;
+        width: 50%;
+        height: 120px;
+        margin: 8px auto;
+      }
+      .box-sizing {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="paragraphe">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+        sit, autem dolore fugit vitae esse inventore impedit et architecto
+        blanditiis ea. Atque velit a nihil eaque numquam nam laboriosam
+        exercitationem.
+      </div>
+      <div class="paragraphe box-sizing">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+        sit, autem dolore fugit vitae esse inventore impedit et architecto
+        blanditiis ea. Atque velit a nihil eaque numquam nam laboriosam
+        exercitationem.
+      </div>
+      <div class="petitpar">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
+        dicta fugit, voluptatem, numquam similique iusto aspernatur corporis,
+        aperiam rerum in facilis aliquam! Odit excepturi dolorum voluptatem
+        necessitatibus, minus ut mollitia.
+      </div>
+    </div>
+  </body>
+</html>

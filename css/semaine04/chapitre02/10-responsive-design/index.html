@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+  <meta charset="utf-8" /><title>10 - Responsive design</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font:
+        18px Arial,
+        sans-serif;
+      margin: 40px;
+    }
+    .page {
+      max-width: 850px;
+      margin: auto;
+    }
+    .cartes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .carte {
+      flex: 1 1 220px;
+      background: #c8e6f5;
+      padding: 20px;
+      min-width: 0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+  <div class="page">
+    <h1>Une page fluide</h1>
+    <p>
+      Redimensionnez la fenêtre. <code>max-width</code> limite la largeur sur
+      grand écran et <code>flex-wrap</code> permet aux cartes de se réorganiser.
+    </p>
+    <div class="cartes">
+      <div class="carte">Carte 1</div>
+      <div class="carte">Carte 2</div>
+      <div class="carte">Carte 3</div>
+    </div>
+  </div>
+</html>

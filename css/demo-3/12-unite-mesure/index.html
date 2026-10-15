@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .demo-unites-texte {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .boite-unite {
+        padding: 1rem;
+        border: 2px solid #c5d9e6;
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .px {
+        font-size: 16px;
+      }
+
+      .rem {
+        font-size: 1.25rem;
+      }
+
+      .parent-em {
+        font-size: 20px;
+      }
+
+      .em {
+        font-size: 1.25em;
+      }
+    </style>
+  </head>
+  <body>
+    <p>allo</p>
+    <div class="demo-unites-texte">
+      <p class="boite-unite px">16px: taille fixe en pixels.</p>
+      <p class="boite-unite rem">
+        1.25rem: relatif à la taille de base du document.
+      </p>
+      <div class="boite-unite parent-em">
+        Parent à 20px
+        <p class="em">1.25em: relatif à la taille du parent.</p>
+      </div>
+    </div>
+  </body>
+</html>

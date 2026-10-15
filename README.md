@@ -1,4 +1,4 @@
-# Interface Web (4203E5MO) — Démos et exemples de code
+# Interface Web (4203E5MO) - Démos et exemples de code
 
 Ce dépôt rassemble les exemples de code et les démonstrations réalisés pendant les séances de cours.
 
