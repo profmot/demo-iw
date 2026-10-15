@@ -1,29 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Demo Table</title>
+    <title>Tableau</title>
   </head>
   <body>
-    <table border="1">
-      <tr>
-        <th scope="col">Jour</th>
-        <th scope="col" colspan="2">Matin</th>
-        <th scope="col">Après-midi</th>
-      </tr>
-      <tr>
-        <th scope="row">Lundi</th>
-        <td rowspan="2">HTML</td>
-        <td>CSS</td>
-        <td>Pause</td>
-      </tr>
-      <tr>
-        <th scope="row">Mardi</th>
-        <td>Projet</td>
-        <td>Projet2</td>
-        <td>Projet3</td>
-      </tr>
+    <table>
+      <thead>
+        <tr>
+          <th>nom</th>
+          <th>programme</th>
+          <th>da</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2">Marc-Oivier</td>
+          <td rowspan="2">202020</td>
+        </tr>
+        <tr>
+          <td>Joe</td>
+          <td>SH</td>
+        </tr>
+        <tr>
+          <th scope="row">titre de rangee</th>
+          <td>Joe</td>
+          <td>SH</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>Total</td>
+        </tr>
+      </tfoot>
     </table>
   </body>
 </html>
