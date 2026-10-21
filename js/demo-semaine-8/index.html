@@ -1,65 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8" />
-    <title>Démos DOM & Événements</title>
+    <meta charset="UTF-8" />
+    <title>Démonstration Scroll & Option Passive</title>
     <style>
-      .boite {
-        padding: 8px;
-        border: 1px solid #ccc;
-        margin: 6px 0;
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        /* Rend la page scrollable en lui donnant une hauteur de 3000px */
+        height: 3000px;
+        background: linear-gradient(to bottom, #f0f4f8, #d9e2ec, #bcccdc);
       }
-      .important {
-        border-color: #e00;
+
+      .panneau-fixe {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
       }
-      .cache {
-        display: none;
+
+      h1 {
+        font-size: 1.2rem;
+        margin-top: 0;
       }
-      .selection {
-        outline: 2px solid #007acc;
+
+      .compteur {
+        font-weight: bold;
+        color: #0066cc;
+      }
+
+      .astuce {
+        margin-top: 15px;
+        font-size: 0.9rem;
+        color: #555;
+        background: #f9f9f9;
+        padding: 10px;
+        border-left: 4px solid #0066cc;
       }
     </style>
   </head>
   <body>
-    <h1 id="titre">Démos DOM</h1>
-    <p class="boite">Paragraphe A</p>
-    <p class="boite example">Paragraphe B</p>
-    <div id="conteneur">
-      <h3>Zone</h3>
-      <p>Texte dans le conteneur</p>
+    <div class="panneau-fixe">
+      <h1>Test de l'évènement <code>scroll</code></h1>
+      <p>Faites défiler la page vers le bas...</p>
+      <p>
+        Nombre de défilements enregistrés :
+        <span id="nbScrolls" class="compteur">0</span>
+      </p>
+
+      <div class="astuce">
+        👉 Ouvrez la **Console du navigateur** (Touche <code>F12</code> ou
+        <code>Ctrl + Maj + I</code>) pour voir les messages
+        <code>console.log</code>.
+      </div>
     </div>
 
-    <a id="lien" href="https://example.com" target="_blank">Visiter</a>
+    <script>
+      let compteur = 0;
+      const affichageCompteur = document.getElementById('nbScrolls');
 
-    <hr />
+      // ==========================================================
+      // 1. SANS { passive: true } (Comportement classique / par défaut)
+      // ==========================================================
+      window.addEventListener('scroll', () => {
+        console.log('SANS passive: La page a défilé');
+        const debut = performance.now();
 
-    <button id="btn">Bouton</button>
+        while (performance.now() - debut < 10000) {
+          // Simulation d'un traitement très lourd
+        }
+        compteur++;
+        affichageCompteur.textContent = compteur;
+      });
 
-    <ul id="liste" class="boite">
-      <li>Élément 1</li>
-      <li>Élément 2</li>
-    </ul>
-
-    <form id="formEx" class="boite">
-      <label>Prénom: <input id="prenom" name="prenom" /></label>
-      <label>Courriel: <input id="email" name="email" /></label>
-      <select id="choix" name="choix">
-        <option>Banane</option>
-        <option>Pomme</option>
-        <option value="autre">Autre</option>
-      </select>
-      <div id="autreChamp" class="cache">
-        <input name="autre_val" placeholder="Précisez" />
-      </div>
-      <button type="submit">Envoyer</button>
-    </form>
-
-    <textarea
-      id="resultArea"
-      rows="5"
-      cols="40"
-      class="boite"
-      placeholder="Résultats..."
-    ></textarea>
+      // ==========================================================
+      // 2. AVEC { passive: true } (Optimisé pour les performances)
+      // ==========================================================
+    </script>
   </body>
 </html>
