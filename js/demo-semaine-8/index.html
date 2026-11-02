@@ -1,86 +1,49 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Démonstration Scroll & Option Passive</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        /* Rend la page scrollable en lui donnant une hauteur de 3000px */
-        height: 3000px;
-        background: linear-gradient(to bottom, #f0f4f8, #d9e2ec, #bcccdc);
-      }
-
-      .panneau-fixe {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        max-width: 400px;
-      }
-
-      h1 {
-        font-size: 1.2rem;
-        margin-top: 0;
-      }
-
-      .compteur {
-        font-weight: bold;
-        color: #0066cc;
-      }
-
-      .astuce {
-        margin-top: 15px;
-        font-size: 0.9rem;
-        color: #555;
-        background: #f9f9f9;
-        padding: 10px;
-        border-left: 4px solid #0066cc;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
   </head>
   <body>
-    <div class="panneau-fixe">
-      <h1>Test de l'évènement <code>scroll</code></h1>
-      <p>Faites défiler la page vers le bas...</p>
-      <p>
-        Nombre de défilements enregistrés :
-        <span id="nbScrolls" class="compteur">0</span>
-      </p>
-
-      <div class="astuce">
-        👉 Ouvrez la **Console du navigateur** (Touche <code>F12</code> ou
-        <code>Ctrl + Maj + I</code>) pour voir les messages
-        <code>console.log</code>.
-      </div>
+    <div class="carte">
+      <button>Action</button>
     </div>
+    <section class="event-demo">
+      <h2>Délégation d'événements</h2>
+      <ul id="liste-demo">
+        <li>Lire le DOM <button type="button">Supprimer</button></li>
+        <li>Tester les événements <button type="button">Supprimer</button></li>
+        <li>Préparer le TP2 <button type="button">Supprimer</button></li>
+      </ul>
+    </section>
 
     <script>
-      let compteur = 0;
-      const affichageCompteur = document.getElementById('nbScrolls');
+      const listed = document.querySelector('#liste-demo');
 
-      // ==========================================================
-      // 1. SANS { passive: true } (Comportement classique / par défaut)
-      // ==========================================================
-      window.addEventListener('scroll', () => {
-        console.log('SANS passive: La page a défilé');
-        const debut = performance.now();
-
-        while (performance.now() - debut < 10000) {
-          // Simulation d'un traitement très lourd
+      listed.addEventListener('click', (event) => {
+        if (event.target.matches('button')) {
+          event.target.closest('li').remove();
         }
-        compteur++;
-        affichageCompteur.textContent = compteur;
       });
+      const liste = document.querySelector('#liste');
 
-      // ==========================================================
-      // 2. AVEC { passive: true } (Optimisé pour les performances)
-      // ==========================================================
+      liste.addEventListener('click', (event) => {
+        if (event.target.matches('button')) {
+          event.target.closest('li').remove();
+        }
+      });
     </script>
   </body>
 </html>
+
+<script>
+  const carte = document.querySelector('.carte');
+  const button = document.querySelector('button');
+  carte.addEventListener('click', (event) => {
+    console.log('carte', event.target);
+    console.log('carte', event.currentTarget);
+  });
+
+  button.addEventListener('click', (event) => {});
+</script>
