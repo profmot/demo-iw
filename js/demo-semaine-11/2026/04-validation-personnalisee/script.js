@@ -1,14 +1,30 @@
-const codePostal = document.querySelector('#codePostal');
+const formulaire = document.querySelector('#preferences');
+const infolettre = document.querySelector('#infolettre');
+const courriel = document.querySelector('#courriel');
+const resultat = document.querySelector('#resultat');
 
-codePostal.addEventListener('input', () => {
-  if (codePostal.validity.patternMismatch) {
-    codePostal.setCustomValidity('Format attendu: A1A 1A1.');
-  } else {
-    codePostal.setCustomValidity('');
+function validerCourriel() {
+  courriel.setCustomValidity('');
+
+  if (infolettre.checked && courriel.value.trim() === '') {
+    courriel.setCustomValidity(
+      "Indiquez votre courriel pour recevoir l'infolettre."
+    );
+    return false;
+  }
+
+  return true;
+}
+
+infolettre.addEventListener('change', () => {
+  if (!validerCourriel()) {
+    courriel.reportValidity();
   }
 });
 
-document.querySelector('#adresse').addEventListener('submit', (event) => {
+courriel.addEventListener('input', validerCourriel);
+
+formulaire.addEventListener('submit', (event) => {
   event.preventDefault();
-  alert('Code postal valide!');
+  resultat.textContent = 'Préférences enregistrées.';
 });

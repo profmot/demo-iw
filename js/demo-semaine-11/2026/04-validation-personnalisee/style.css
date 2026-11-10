@@ -25,3 +25,11 @@ button {
   border: 0;
   border-radius: 6px;
 }
+.choix {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.choix input {
+  width: auto;
+}

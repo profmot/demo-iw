@@ -1,4 +1,4 @@
-const champ = document.querySelector('#site');
+const champ = document.querySelector('#courriel');
 const etats = document.querySelector('#etats');
 
 champ.addEventListener('input', () => {

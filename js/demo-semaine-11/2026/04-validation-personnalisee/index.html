@@ -10,16 +10,16 @@
   <body>
     <main>
       <h1>Message de validation personnalisé</h1>
-      <form id="adresse">
-        <label for="codePostal">Code postal canadien</label>
-        <input
-          id="codePostal"
-          required
-          pattern="^[A-Za-z][0-9][A-Za-z][ -]?[0-9][A-Za-z][0-9]$"
-          placeholder="H7T 1A1"
-        />
-        <button>Valider</button>
+      <form id="preferences">
+        <label class="choix">
+          <input id="infolettre" type="checkbox" />
+          Je veux recevoir l'infolettre
+        </label>
+        <label for="courriel">Courriel</label>
+        <input id="courriel" name="courriel" type="email" />
+        <button>Enregistrer</button>
       </form>
+      <p id="resultat" aria-live="polite"></p>
     </main>
   </body>
 </html>

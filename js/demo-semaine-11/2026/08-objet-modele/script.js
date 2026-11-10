@@ -10,8 +10,8 @@ const formulaire = document.querySelector('#compte');
 
 formulaire.addEventListener('submit', (event) => {
   event.preventDefault();
-  const donnees = Object.fromEntries(new FormData(formulaire));
-  const utilisateur = new Utilisateur(donnees);
+  const data = Object.fromEntries(new FormData(formulaire));
+  const utilisateur = new Utilisateur(data);
   document.querySelector('#sortie').textContent = JSON.stringify(
     utilisateur,
     null,

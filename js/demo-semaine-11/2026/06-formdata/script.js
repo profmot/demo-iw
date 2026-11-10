@@ -7,7 +7,7 @@ formulaire.addEventListener('submit', (event) => {
 
   sortie.textContent = JSON.stringify(
     {
-      nom: donnees.get('nom'),
+      courriel: donnees.get('courriel'),
       technologies: donnees.getAll('technologies'),
     },
     null,

@@ -1,9 +1,12 @@
 const formulaire = document.querySelector('#profil');
 const sortie = document.querySelector('#sortie');
 
-document.querySelector('#verifier').addEventListener('click', () => {
+document.querySelector('#check').addEventListener('click', () => {
   sortie.textContent = `checkValidity(): ${formulaire.checkValidity()}`;
-  formulaire.reportValidity();
+});
+
+document.querySelector('#report').addEventListener('click', () => {
+  sortie.textContent = `reportValidity(): ${formulaire.reportValidity()}`;
 });
 
 formulaire.addEventListener('submit', (event) => {
