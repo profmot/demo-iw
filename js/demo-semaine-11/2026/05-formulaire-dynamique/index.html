@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire dynamique</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Afficher et ajouter des champs</h1>
+      <form>
+        <label for="typeClient">Type de client</label>
+        <select id="typeClient" name="typeClient">
+          <option value="personne">Personne</option>
+          <option value="entreprise">Entreprise</option>
+        </select>
+
+        <div id="zoneEntreprise" hidden>
+          <label for="entreprise">Nom de l'entreprise</label>
+          <input id="entreprise" name="entreprise" />
+        </div>
+
+        <fieldset id="telephones">
+          <legend>Téléphones</legend>
+        </fieldset>
+        <button type="button" id="ajouter">Ajouter un téléphone</button>
+      </form>
+    </main>
+  </body>
+</html>

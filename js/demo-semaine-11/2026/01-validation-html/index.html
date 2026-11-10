@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation HTML</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Validation HTML intégrée</h1>
+      <form id="inscription">
+        <label for="nom">Nom</label>
+        <input id="nom" name="nom" required minlength="2" />
+
+        <label for="courriel">Courriel</label>
+        <input id="courriel" name="courriel" type="email" required />
+
+        <label for="age">Âge</label>
+        <input id="age" name="age" type="number" min="16" max="120" required />
+
+        <button>S'inscrire</button>
+      </form>
+      <p id="resultat" aria-live="polite"></p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+main {
+  max-width: 760px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+}
+button {
+  padding: 0.7rem 1rem;
+  font: inherit;
+}
+.comparaison {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+section {
+  padding: 1rem;
+  background: #eef2ff;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .comparaison {
+    grid-template-columns: 1fr;
+  }
+}

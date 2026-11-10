@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire et API</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Envoyer un formulaire à une API</h1>
+      <form id="publication">
+        <label for="titre">Titre</label>
+        <input id="titre" name="title" required value="Démo en classe" />
+        <label for="contenu">Contenu</label>
+        <textarea id="contenu" name="body" required>
+Texte envoyé à JSONPlaceholder.</textarea
+        >
+        <input type="hidden" name="userId" value="1" />
+        <button>Envoyer</button>
+      </form>
+      <pre id="sortie">En attente.</pre>
+    </main>
+  </body>
+</html>

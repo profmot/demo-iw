@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objet modèle</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Du formulaire vers un objet modèle</h1>
+      <form id="compte">
+        <label
+          >Courriel
+          <input name="email" type="email" required value="SAM@EXEMPLE.CA"
+        /></label>
+        <label
+          >Mot de passe
+          <input
+            name="password"
+            type="password"
+            minlength="8"
+            required
+            value="interface"
+        /></label>
+        <label
+          ><input name="remember" type="checkbox" value="oui" checked /> Se
+          souvenir de moi</label
+        >
+        <button>Créer l'objet</button>
+      </form>
+      <pre id="sortie"></pre>
+    </main>
+  </body>
+</html>

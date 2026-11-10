@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FormData</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Lire un formulaire avec FormData</h1>
+      <form id="preferences">
+        <label>Nom <input name="nom" value="Sam" /></label>
+        <fieldset>
+          <legend>Technologies</legend>
+          <label
+            ><input type="checkbox" name="technologies" value="HTML" checked />
+            HTML</label
+          >
+          <label
+            ><input type="checkbox" name="technologies" value="CSS" />
+            CSS</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="technologies"
+              value="JavaScript"
+              checked
+            />
+            JavaScript</label
+          >
+        </fieldset>
+        <button>Lire les données</button>
+      </form>
+      <pre id="sortie"></pre>
+    </main>
+  </body>
+</html>

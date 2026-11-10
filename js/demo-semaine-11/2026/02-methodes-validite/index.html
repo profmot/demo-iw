@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Méthodes de validation</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>checkValidity et reportValidity</h1>
+      <form id="profil">
+        <label for="pseudo">Pseudo, au moins 3 caractères</label>
+        <input id="pseudo" name="pseudo" required minlength="3" />
+        <div class="actions">
+          <button type="button" id="verifier">Vérifier</button>
+          <button type="submit">Soumettre</button>
+        </div>
+      </form>
+      <pre id="sortie">Aucune vérification.</pre>
+    </main>
+  </body>
+</html>

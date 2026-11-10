@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation personnalisée</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Message de validation personnalisé</h1>
+      <form id="adresse">
+        <label for="codePostal">Code postal canadien</label>
+        <input
+          id="codePostal"
+          required
+          pattern="^[A-Za-z][0-9][A-Za-z][ -]?[0-9][A-Za-z][0-9]$"
+          placeholder="H7T 1A1"
+        />
+        <button>Valider</button>
+      </form>
+    </main>
+  </body>
+</html>
