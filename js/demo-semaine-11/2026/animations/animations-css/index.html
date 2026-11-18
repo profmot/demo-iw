@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="bouton" type="button">Charger les résultats</button>
+  </body>
+</html>
+
+<style>
+  .bouton {
+    transform: translateY(0);
+    opacity: 1;
+    width: 500px;
+    transition-property: width, transform, opacity;
+    transition-duration: 400ms, 250ms, 400ms;
+    transition-timing-function: linear, ease-out, ease-in;
+    transition-delay: 0s;
+  }
+
+  .bouton:hover,
+  .bouton:focus-visible {
+    width: 600px;
+    transform: translateY(-5px);
+    opacity: 0.2;
+  }
+</style>

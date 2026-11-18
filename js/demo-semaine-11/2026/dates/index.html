@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dates</title>
+  </head>
+  <body>
+    <label for="dateModifier">Date et heure à modifier</label>
+    <input id="dateModifier" type="datetime-local" />
+  </body>
+</html>
+
+<script>
+  const debut = new Date('2026-11-05T10:00:00');
+  const fin = new Date('2026-11-05T11:15:30');
+
+  const ecouleMs = fin - debut;
+
+  const minutes = Math.round(ecouleMs / 60000);
+  console.log(minutes);
+</script>
